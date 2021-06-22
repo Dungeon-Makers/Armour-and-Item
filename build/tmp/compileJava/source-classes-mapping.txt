@@ -12,8 +12,8 @@ com/yusuf/armouranditem/core/init/BlockInit.java
  com.yusuf.armouranditem.core.init.BlockInit
 com/yusuf/armouranditem/data/client/ModBlockStateProvider.java
  com.yusuf.armouranditem.data.client.ModBlockStateProvider
-com/yusuf/armouranditem/data/ModLangProvider.java
- com.yusuf.armouranditem.data.ModLangProvider
+com/yusuf/armouranditem/data/ModItemTagsProvider.java
+ com.yusuf.armouranditem.data.ModItemTagsProvider
 com/yusuf/armouranditem/data/client/ModItemModelProvider.java
  com.yusuf.armouranditem.data.client.ModItemModelProvider
 com/yusuf/armouranditem/common/material/CustomArmorMaterial.java
@@ -30,11 +30,11 @@ com/yusuf/armouranditem/data/loot/ModBlockLootTables.java
  com.yusuf.armouranditem.data.loot.ModBlockLootTables
 com/yusuf/armouranditem/data/loot/ModLootTables.java
  com.yusuf.armouranditem.data.loot.ModLootTables
-com/yusuf/armouranditem/data/DataGenerators.java
- com.yusuf.armouranditem.data.DataGenerators
-com/yusuf/armouranditem/data/ModRecipeProvider.java
- com.yusuf.armouranditem.data.ModRecipeProvider
-com/yusuf/armouranditem/data/ModItemTagsProvider.java
- com.yusuf.armouranditem.data.ModItemTagsProvider
 com/yusuf/armouranditem/data/ModBlockTagsProvider.java
  com.yusuf.armouranditem.data.ModBlockTagsProvider
+com/yusuf/armouranditem/data/ModRecipeProvider.java
+ com.yusuf.armouranditem.data.ModRecipeProvider
+com/yusuf/armouranditem/data/DataGenerators.java
+ com.yusuf.armouranditem.data.DataGenerators
+com/yusuf/armouranditem/data/ModLangProvider.java
+ com.yusuf.armouranditem.data.ModLangProvider

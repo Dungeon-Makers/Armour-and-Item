@@ -2,9 +2,10 @@
 modLoader="javafml"
 loaderVersion="[36,)"
 license="BSD 3-Clause License"
+issueTrackerURL="https://github.com/Dungeon-Makers/Armour-and-Item/issues" #optional
 [[mods]]
 modId="armouranditem"
-version="${1}"
+version="${file.jarVersion}"
 displayName="Custom Armour and Items"
 credits="Custom Armour and Items by Yusuf Ismail."
 

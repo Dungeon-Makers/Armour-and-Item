@@ -26,6 +26,14 @@ public class ModLangProvider extends LanguageProvider {
         item(ItemInit.BLACK_DIAMOND, "Black Diamond");
         item(ItemInit.BLACK_DIAMOND_SCRAP, "Black Diamond scrap");
 
+        //tools and armour
+        item(ItemInit.BLACK_DIAMOND_HELMET, "Black Diamond Helmet");
+        item(ItemInit.BLACK_DIAMOND_CHESTPLATE, "Black Diamond Chestplate");
+        item(ItemInit.BLACK_DIAMOND_LEGGINGS, "Black Diamond Leggings");
+        item(ItemInit.BLACK_DIAMOND_BOOTS, "Black Diamond Boots");
+        item(ItemInit.BLACK_DIAMOND_SWORD, "Black Diamond Sword");
+
+
         //others
         add(MainItemGroup.MAIN.getDisplayName().getString(), "Armour and Item Tab");
     }
