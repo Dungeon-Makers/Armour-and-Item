@@ -4,6 +4,7 @@ package com.yusuf.armouranditem.data;
 import com.yusuf.armouranditem.ArmourAndItem;
 import com.yusuf.armouranditem.data.client.ModBlockStateProvider;
 import com.yusuf.armouranditem.data.client.ModItemModelProvider;
+import com.yusuf.armouranditem.data.loot.ModLootTables;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -19,5 +20,9 @@ public class DataGenerators {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
          gen.addProvider(new ModBlockStateProvider(gen, existingFileHelper));
          gen.addProvider(new ModItemModelProvider(gen, existingFileHelper));
+
+         //other datagenerator
+         gen.addProvider(new ModLangProvider(gen));
+         gen.addProvider(new ModLootTables(gen));
     }
 }
