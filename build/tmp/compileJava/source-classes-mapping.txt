@@ -8,8 +8,8 @@ com/yusuf/armouranditem/data/loot/ModBlockLootTables.java
  com.yusuf.armouranditem.data.loot.ModBlockLootTables
 com/yusuf/armouranditem/data/loot/ModLootTables.java
  com.yusuf.armouranditem.data.loot.ModLootTables
-com/yusuf/armouranditem/data/DataGenerators.java
- com.yusuf.armouranditem.data.DataGenerators
+com/yusuf/armouranditem/core/init/BlockInit.java
+ com.yusuf.armouranditem.core.init.BlockInit
 com/yusuf/armouranditem/ArmourAndItem.java
  com.yusuf.armouranditem.ArmourAndItem
 com/yusuf/armouranditem/core/itemgroup/MainItemGroup.java
@@ -18,5 +18,9 @@ com/yusuf/armouranditem/core/init/ItemInit.java
  com.yusuf.armouranditem.core.init.ItemInit
 com/yusuf/armouranditem/data/client/ModItemModelProvider.java
  com.yusuf.armouranditem.data.client.ModItemModelProvider
-com/yusuf/armouranditem/core/init/BlockInit.java
- com.yusuf.armouranditem.core.init.BlockInit
+com/yusuf/armouranditem/data/DataGenerators.java
+ com.yusuf.armouranditem.data.DataGenerators
+com/yusuf/armouranditem/data/ModLangProvider.java
+ com.yusuf.armouranditem.data.ModLangProvider
+com/yusuf/armouranditem/core/util/ClientEventBusSubscriber.java
+ com.yusuf.armouranditem.core.util.ClientEventBusSubscriber
