@@ -22,3 +22,4 @@
 *.lock
 .gradle/buildOutputCleanup/buildOutputCleanup.lock
 *.log
+run/logs/latest.log
