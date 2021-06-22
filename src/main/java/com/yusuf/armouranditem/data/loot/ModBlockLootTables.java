@@ -14,7 +14,7 @@ public class ModBlockLootTables extends BlockLootTables {
     protected void addTables() {
         //ores
         add(BlockInit.BLACK_DIAMOND_ORE.get(),
-                createOreDrop(BlockInit.BLACK_DIAMOND_ORE.get(), ItemInit.BLACK_DIAMOND_SCRAP.get()));
+                createOreDrop(BlockInit.BLACK_DIAMOND_ORE.get(), ItemInit.BLACK_DIAMOND.get()));
 
 
 /*

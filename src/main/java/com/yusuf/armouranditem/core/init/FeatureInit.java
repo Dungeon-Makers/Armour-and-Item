@@ -13,7 +13,7 @@ public class FeatureInit {
     public static void addOres(final BiomeLoadingEvent event) {
 
         addOre(event, OreFeatureConfig.FillerBlockType.NATURAL_STONE,
-                BlockInit.BLACK_DIAMOND_ORE.get().defaultBlockState(), 5, 0, 14, 7);
+                BlockInit.BLACK_DIAMOND_ORE.get().defaultBlockState(), 4, 0, 14, 5);
 
     }
     public static void addOre(final BiomeLoadingEvent event, RuleTest rule, BlockState state, int veinSize,

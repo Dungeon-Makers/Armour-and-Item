@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "A A",
+    "A A"
+  ],
+  "key": {
+    "A": {
+      "tag": "forge:ingots/black_diamond"
+    }
+  },
+  "result": {
+    "item": "armouranditem:black_diamond_boots"
+  }
+}
