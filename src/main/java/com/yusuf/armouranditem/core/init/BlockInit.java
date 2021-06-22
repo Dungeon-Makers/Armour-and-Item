@@ -17,7 +17,9 @@ import static com.yusuf.armouranditem.core.init.ItemInit.ITEMS;
 
 public class BlockInit {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ArmourAndItem.MOD_ID);
+ //blocks
 
+    public static final RegistryObject<GeneralBlock> BLACK_DIAMOND_BLOCK = register("black_diamond_block", Blocks.ANCIENT_DEBRIS);
 //ores
 public static final RegistryObject<GeneralBlock> BLACK_DIAMOND_ORE = register("black_diamond_ore", Blocks.ANCIENT_DEBRIS);
 

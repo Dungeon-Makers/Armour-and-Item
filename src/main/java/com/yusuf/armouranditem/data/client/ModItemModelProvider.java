@@ -1,12 +1,12 @@
-/*
+
 package com.yusuf.armouranditem.data.client;
 
-import com.yusuf.armouranditem.Main;
+import com.yusuf.armouranditem.ArmourAndItem;
 import net.minecraft.data.DataGenerator;
-import net.minecraftforge.client.model.generators.ExistingFileHelper;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ModItemModelProvider extends ItemModelProvider {
 
@@ -22,14 +22,16 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         withExistingParent("black_diamond_ore", modLoc("block/black_diamond_ore"));
         withExistingParent("black_diamond_block", modLoc("block/black_diamond_block"));
-        withExistingParent("infinitum_ore", modLoc("block/infinitum_ore"));
-        withExistingParent("infinitum_block", modLoc("block/infinitum_block"));
+        //withExistingParent("infinitum_ore", modLoc("block/infinitum_ore"));
+       // withExistingParent("infinitum_block", modLoc("block/infinitum_block"));
 
         ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
         ModelFile itemhandHeld = getExistingFile(mcLoc("item/handheld"));
 
         //items
         builder(itemGenerated, "black_diamond_scrap");
+        builder(itemGenerated, "black_diamond");
+
 
 
 
@@ -48,4 +50,4 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 }
 
- */
+

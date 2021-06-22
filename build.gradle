@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        maven { url = 'https://files.minecraftforge.net/maven' }
+        maven { url = 'https://maven.minecraftforge.net' }
         mavenCentral()
     }
     dependencies {
@@ -11,6 +11,7 @@ apply plugin: 'net.minecraftforge.gradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
+
 
 version = 'armouranditem-1.16.5-1'
 group = 'com.yusuf.armouranditem' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -86,8 +87,6 @@ minecraft {
 sourceSets.main.resources {
     srcDir 'src/generated/resources'
 }
-
-sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 
 dependencies {
