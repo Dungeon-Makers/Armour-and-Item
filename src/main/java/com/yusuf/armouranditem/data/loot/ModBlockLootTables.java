@@ -15,9 +15,9 @@ public class ModBlockLootTables extends BlockLootTables {
         //ores
         add(BlockInit.BLACK_DIAMOND_ORE.get(),
                 createOreDrop(BlockInit.BLACK_DIAMOND_ORE.get(), ItemInit.BLACK_DIAMOND_SCRAP.get()));
+
+
 /*
-        registerLootTable(BlockInit.INFINITUM_ORE.get(),
-                droppingItemWithFortune(BlockInit.INFINITUM_ORE.get(), ItemInit.INFINITUM_SCRAP.get()));
 
 
  */
