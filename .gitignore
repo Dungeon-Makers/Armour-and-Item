@@ -21,3 +21,4 @@
 *.xml
 *.lock
 .gradle/buildOutputCleanup/buildOutputCleanup.lock
+*.log
