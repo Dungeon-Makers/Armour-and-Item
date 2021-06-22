@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:ores/black_diamond",
+    "#forge:ores/infinitum",
+    "#forge:storage_blocks/infinitum",
+    "#forge:storage_blocks/black_diamond"
+  ]
+}

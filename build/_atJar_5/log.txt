@@ -1,0 +1,5 @@
+Args: "--inJar", "/Users/YusufIsmail/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.15.2-31.2.50/forge-1.15.2-31.2.50-injected.jar", "--outJar", "/Users/YusufIsmail/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.15.2-31.2.50_mapped_official_1.16.5/forge-1.15.2-31.2.50_mapped_official_1.16.5.jar", "--logFile", "accesstransform.log", "--atFile", "/Users/YusufIsmail/Documents/GitHub/armouranditemmod/build/_atJar_5/parent_at.cfg"
+Classpath: /Users/YusufIsmail/.gradle/caches/forge_gradle/maven_downloader/net/minecraftforge/accesstransformers/1.0.5/accesstransformers-1.0.5-fatjar.jar
+WorkDir: /Users/YusufIsmail/Documents/GitHub/armouranditemmod/build/_atJar_5
+Main: net.minecraftforge.accesstransformer.TransformerProcessor
+====================================

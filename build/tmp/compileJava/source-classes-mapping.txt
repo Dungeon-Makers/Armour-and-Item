@@ -1,0 +1,34 @@
+com/yusuf/armouranditem/data/loot/ModBlockLootTables.java
+ com.yusuf.armouranditem.data.loot.ModBlockLootTables
+com/yusuf/armouranditem/core/world/World.java
+ com.yusuf.armouranditem.core.world.World
+com/yusuf/armouranditem/data/loot/ModLootTables.java
+ com.yusuf.armouranditem.data.loot.ModLootTables
+com/yusuf/armouranditem/data/DataGenerators.java
+ com.yusuf.armouranditem.data.DataGenerators
+com/yusuf/armouranditem/data/ModItemTagsProvider.java
+ com.yusuf.armouranditem.data.ModItemTagsProvider
+com/yusuf/armouranditem/core/itemgroup/MainItemGroup.java
+ com.yusuf.armouranditem.core.itemgroup.MainItemGroup
+com/yusuf/armouranditem/data/client/ModBlockStateProvider.java
+ com.yusuf.armouranditem.data.client.ModBlockStateProvider
+com/yusuf/armouranditem/data/client/ModItemModelProvider.java
+ com.yusuf.armouranditem.data.client.ModItemModelProvider
+com/yusuf/armouranditem/core/init/BlockInit.java
+ com.yusuf.armouranditem.core.init.BlockInit
+com/yusuf/armouranditem/Main.java
+ com.yusuf.armouranditem.Main
+com/yusuf/armouranditem/core/init/TagsInit.java
+ com.yusuf.armouranditem.core.init.TagsInit
+ com.yusuf.armouranditem.core.init.TagsInit$Blocks
+ com.yusuf.armouranditem.core.init.TagsInit$Items
+com/yusuf/armouranditem/core/util/ModResourceLocation.java
+ com.yusuf.armouranditem.core.util.ModResourceLocation
+com/yusuf/armouranditem/data/ModRecipeProvider.java
+ com.yusuf.armouranditem.data.ModRecipeProvider
+com/yusuf/armouranditem/core/world/gen/OreGeneration.java
+ com.yusuf.armouranditem.core.world.gen.OreGeneration
+com/yusuf/armouranditem/core/init/ItemInit.java
+ com.yusuf.armouranditem.core.init.ItemInit
+com/yusuf/armouranditem/data/ModBlockTagsProvider.java
+ com.yusuf.armouranditem.data.ModBlockTagsProvider

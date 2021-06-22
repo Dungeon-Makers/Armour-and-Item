@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "armouranditem:infinitum"
+    }
+  },
+  "result": {
+    "item": "armouranditem:infinitum_block"
+  }
+}
