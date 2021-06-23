@@ -31,6 +31,11 @@ public class ItemInit {
             () -> new SwordItem(CustomToolMaterial.BLACK_DIAMOND_SWORD, 0, 7f,
                     new Item.Properties().stacksTo(1).durability(600).tab(MainItemGroup.MAIN)));
 
+    public static final RegistryObject<SwordItem> PURPLE_DIAMOND_SWORD = ITEMS.register("purple_diamond_sword",
+            () -> new SwordItem(CustomToolMaterial.BLACK_DIAMOND_SWORD, 0, 7f,
+                    new Item.Properties().stacksTo(1).durability(600).tab(MainItemGroup.MAIN)));
+
+
 
     // black diamond armour
     public static final RegistryObject<Item> BLACK_DIAMOND_HELMET = ITEMS.register("black_diamond_helmet",

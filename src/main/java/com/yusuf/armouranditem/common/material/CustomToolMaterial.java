@@ -8,7 +8,8 @@ import java.util.function.Supplier;
 
 public enum CustomToolMaterial implements IItemTier {
 
-    BLACK_DIAMOND_SWORD(20, 2000, 60f, 12f, 40, () -> Ingredient.of(ItemInit.BLACK_DIAMOND.get()));
+    BLACK_DIAMOND_SWORD(20, 2000, 60f, 12f, 40, () -> Ingredient.of(ItemInit.BLACK_DIAMOND.get())),
+    PURPLE_DIAMOND_SWORD(20, 2000, 60f, 14f, 40, () -> Ingredient.of(ItemInit.BLACK_DIAMOND.get()));
 
 
 

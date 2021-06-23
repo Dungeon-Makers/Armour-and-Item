@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " K ",
+    " K ",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "K": {
+      "tag": "forge:scraps/purple_diamond"
+    }
+  },
+  "result": {
+    "item": "armouranditem:purple_diamond_sword"
+  }
+}

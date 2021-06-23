@@ -41,6 +41,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "purple_diamond_chestplate");
         builder(itemGenerated, "purple_diamond_leggings");
         builder(itemGenerated, "purple_diamond_boots");
+        builder(itemGenerated, "purple_diamond_sword");
 
         //tools
         tool(itemhandHeld, "black_diamond_sword");

@@ -137,6 +137,16 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("A A")
                 .unlockedBy("has_item", has(TagsInit.Items.INGOTS_PURPLE_DIAMOND))
                 .save(consumer,modId("purple_diamond_boot"));
+
+        ShapedRecipeBuilder.shaped(ItemInit.PURPLE_DIAMOND_SWORD.get())
+                .define('#', Items.STICK.getItem())
+                .define('K', TagsInit.Items.INGOTS_PURPLE_DIAMOND)
+                .pattern(" K ")
+                .pattern(" K ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(TagsInit.Items.INGOTS_PURPLE_DIAMOND))
+                .save(consumer,modId("purple_diamond_sword"));
+
     }
     private Ingredient ingredient(IItemProvider entry) {
         return Ingredient.of(entry);
