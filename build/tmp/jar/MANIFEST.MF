@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: Armour-and-Item
-Implementation-Version: 1.16.5-2
-Specification-Vendor: Yusuf.I
-Specification-Title: armouranditem
-Implementation-Timestamp: 2021-06-23T17:02:53+0100
-Specification-Version: 1
-Implementation-Vendor: Yusuf.I
-
