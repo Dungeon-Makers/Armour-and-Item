@@ -1,7 +1,7 @@
-Args: "--in-jar", "/Users/YusufIsmail/Documents/GitHub/armouranditemmod/build/libs/armouranditem-armouranditem-1.1.jar", "--out-jar", "/Users/YusufIsmail/Documents/GitHub/armouranditemmod/build/reobfJar/output.jar", "--srg-in", "/Users/YusufIsmail/Documents/GitHub/armouranditemmod/build/createMcpToSrg/output.tsrg", "--live"
+Args: "--in-jar", "/Users/YusufIsmail/Documents/GitHub/Armour-and-Item/build/libs/armouranditem-armouranditem-1.16.5-2.jar", "--out-jar", "/Users/YusufIsmail/Documents/GitHub/Armour-and-Item/build/reobfJar/output.jar", "--srg-in", "/Users/YusufIsmail/Documents/GitHub/Armour-and-Item/build/createMcpToSrg/output.tsrg", "--live"
 Classpath: /Users/YusufIsmail/.gradle/caches/forge_gradle/maven_downloader/net/md-5/SpecialSource/1.9.0/SpecialSource-1.9.0-shaded.jar
-Classpath: /Users/YusufIsmail/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.5-36.1.0_mapped_official_1.16.5/forge-1.16.5-36.1.0_mapped_official_1.16.5-recomp.jar
-Classpath: /Users/YusufIsmail/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.5-36.1.0_mapped_official_1.16.5/forge-1.16.5-36.1.0_mapped_official_1.16.5-launcher.jar
+Classpath: /Users/YusufIsmail/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.5-36.1.2_mapped_official_1.16.5/forge-1.16.5-36.1.2_mapped_official_1.16.5-recomp.jar
+Classpath: /Users/YusufIsmail/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.5-36.1.2_mapped_official_1.16.5/forge-1.16.5-36.1.2_mapped_official_1.16.5-launcher.jar
 Classpath: /Users/YusufIsmail/.gradle/caches/forge_gradle/minecraft_repo/versions/1.16.5/client-extra.jar
 Classpath: /Users/YusufIsmail/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.1/f7be08ec23c21485b9b5a1cf1654c2ec8c58168d/jsr305-3.0.1.jar
 Classpath: /Users/YusufIsmail/.gradle/caches/modules-2/files-2.1/net.minecraftforge/mergetool/1.0.9/d1e1ba354a40b5703340b5cb02fdca489cff3646/mergetool-1.0.9-api.jar
@@ -64,7 +64,7 @@ Classpath: /Users/YusufIsmail/.gradle/caches/modules-2/files-2.1/com.mojang/text
 Classpath: /Users/YusufIsmail/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-utils/3.2.1/13b015768e0d04849d2794e4c47eb02d01a0de32/plexus-utils-3.2.1.jar
 Classpath: /Users/YusufIsmail/.gradle/caches/modules-2/files-2.1/org.jline/jline-reader/3.12.1/4382ab1382c7b6f379377ed5f665dc2f6e1218bc/jline-reader-3.12.1.jar
 Classpath: /Users/YusufIsmail/.gradle/caches/modules-2/files-2.1/org.jline/jline-terminal/3.12.1/c777448314e050d980a6b697c140f3bfe9eb7416/jline-terminal-3.12.1.jar
-WorkDir: /Users/YusufIsmail/Documents/GitHub/armouranditemmod/build/reobfJar
+WorkDir: /Users/YusufIsmail/Documents/GitHub/Armour-and-Item/build/reobfJar
 Main: net.md_5.specialsource.SpecialSource
 ====================================
 Loading mappings
@@ -77,12 +77,12 @@ Loading mappings... 50%
 0 packages, 5447 classes, 21481 fields, 38359 methods
 Remapping final jar
 Remapping jar...  1%
-Remapping jar... 11%
-Remapping jar... 21%
-Remapping jar... 31%
-Remapping jar... 41%
-Remapping jar... 51%
-Remapping jar... 61%
+Remapping jar... 10%
+Remapping jar... 20%
+Remapping jar... 30%
+Remapping jar... 40%
+Remapping jar... 50%
+Remapping jar... 60%
 Remapping jar... 70%
 Remapping jar... 80%
 Remapping jar... 90%

@@ -2,6 +2,11 @@
   "block.armouranditem.black_diamond_block": "Black Diamond Block",
   "block.armouranditem.black_diamond_ore": "Black Diamond Ore",
   "item.armouranditem.black_diamond": "Black Diamond",
+  "item.armouranditem.black_diamond_boots": "Black Diamond Boots",
+  "item.armouranditem.black_diamond_chestplate": "Black Diamond Chestplate",
+  "item.armouranditem.black_diamond_helmet": "Black Diamond Helmet",
+  "item.armouranditem.black_diamond_leggings": "Black Diamond Leggings",
   "item.armouranditem.black_diamond_scrap": "Black Diamond scrap",
+  "item.armouranditem.black_diamond_sword": "Black Diamond Sword",
   "itemGroup.main": "Armour and Item Tab"
 }
