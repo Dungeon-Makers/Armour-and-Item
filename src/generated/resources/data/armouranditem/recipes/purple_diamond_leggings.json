@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "A A",
+    "A A"
+  ],
+  "key": {
+    "A": {
+      "tag": "forge:scraps/purple_diamond"
+    }
+  },
+  "result": {
+    "item": "armouranditem:purple_diamond_leggings"
+  }
+}

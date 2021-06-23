@@ -106,6 +106,37 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_item", has(TagsInit.Items.INGOTS_BLACK_DIAMOND))
                 .save(consumer,modId("black_diamond_sword"));
 
+        ShapedRecipeBuilder.shaped(ItemInit.PURPLE_DIAMOND_HELMET.get())
+                .define('A', TagsInit.Items.INGOTS_PURPLE_DIAMOND)
+                .pattern("AAA")
+                .pattern("A A")
+                .pattern("   ")
+                .unlockedBy("has_item", has(TagsInit.Items.INGOTS_PURPLE_DIAMOND))
+                .save(consumer,modId("purple_diamond_helmet"));
+
+        ShapedRecipeBuilder.shaped(ItemInit.PURPLE_DIAMOND_CHESTPLATE.get())
+                .define('A', TagsInit.Items.INGOTS_PURPLE_DIAMOND)
+                .pattern("A A")
+                .pattern("AAA")
+                .pattern("AAA")
+                .unlockedBy("has_item", has(TagsInit.Items.INGOTS_PURPLE_DIAMOND))
+                .save(consumer,modId("purple_diamond_chestplate"));
+
+        ShapedRecipeBuilder.shaped(ItemInit.PURPLE_DIAMOND_LEGGINGS.get())
+                .define('A', TagsInit.Items.INGOTS_PURPLE_DIAMOND)
+                .pattern("AAA")
+                .pattern("A A")
+                .pattern("A A")
+                .unlockedBy("has_item", has(TagsInit.Items.INGOTS_PURPLE_DIAMOND))
+                .save(consumer,modId("purple_diamond_leggings"));
+
+        ShapedRecipeBuilder.shaped(ItemInit.PURPLE_DIAMOND_BOOTS.get())
+                .define('A', TagsInit.Items.INGOTS_PURPLE_DIAMOND)
+                .pattern("   ")
+                .pattern("A A")
+                .pattern("A A")
+                .unlockedBy("has_item", has(TagsInit.Items.INGOTS_PURPLE_DIAMOND))
+                .save(consumer,modId("purple_diamond_boot"));
     }
     private Ingredient ingredient(IItemProvider entry) {
         return Ingredient.of(entry);

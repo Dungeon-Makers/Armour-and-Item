@@ -49,4 +49,21 @@ public class ItemInit {
             () -> new ArmorItem(CustomArmorMaterial.BLACK_DIAMOND_ARMOUR, EquipmentSlotType.FEET,
                     new Item.Properties().tab(MainItemGroup.MAIN)));
 
+    // Purple diamond armour
+    public static final RegistryObject<Item> PURPLE_DIAMOND_HELMET = ITEMS.register("purple_diamond_helmet",
+            () -> new ArmorItem(CustomArmorMaterial.PURPLE_DIAMOND_ARMOUR, EquipmentSlotType.HEAD,
+                    new Item.Properties().tab(MainItemGroup.MAIN)));
+
+    public static final RegistryObject<Item> PURPLE_DIAMOND_CHESTPLATE = ITEMS.register("purple_diamond_chestplate",
+            () -> new ArmorItem(CustomArmorMaterial.PURPLE_DIAMOND_ARMOUR, EquipmentSlotType.CHEST,
+                    new Item.Properties().tab(MainItemGroup.MAIN)));
+
+    public static final RegistryObject<Item> PURPLE_DIAMOND_LEGGINGS = ITEMS.register("purple_diamond_leggings",
+            () -> new ArmorItem(CustomArmorMaterial.PURPLE_DIAMOND_ARMOUR, EquipmentSlotType.LEGS,
+                    new Item.Properties().tab(MainItemGroup.MAIN)));
+
+    public static final RegistryObject<Item> PURPLE_DIAMOND_BOOTS = ITEMS.register("purple_diamond_boots",
+            () -> new ArmorItem(CustomArmorMaterial.PURPLE_DIAMOND_ARMOUR, EquipmentSlotType.FEET,
+                    new Item.Properties().tab(MainItemGroup.MAIN)));
+
 }

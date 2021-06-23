@@ -37,6 +37,10 @@ public class ModLangProvider extends LanguageProvider {
         item(ItemInit.BLACK_DIAMOND_CHESTPLATE, "Black Diamond Chestplate");
         item(ItemInit.BLACK_DIAMOND_LEGGINGS, "Black Diamond Leggings");
         item(ItemInit.BLACK_DIAMOND_BOOTS, "Black Diamond Boots");
+        item(ItemInit.PURPLE_DIAMOND_HELMET, "Purple Diamond Helmet");
+        item(ItemInit.PURPLE_DIAMOND_CHESTPLATE, "Purple Diamond Chestplate");
+        item(ItemInit.PURPLE_DIAMOND_LEGGINGS, "Purple Diamond Leggings");
+        item(ItemInit.PURPLE_DIAMOND_BOOTS, "Purple Diamond Boots");
         item(ItemInit.BLACK_DIAMOND_SWORD, "Black Diamond Sword");
 
 
