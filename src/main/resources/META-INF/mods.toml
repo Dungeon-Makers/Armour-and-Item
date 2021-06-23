@@ -8,8 +8,8 @@ modId="armouranditem"
 version="${file.jarVersion}"
 displayName="Custom Armour and Items"
 displayURL="https://github.com/Dungeon-Makers"
+updateJSONURL="https://raw.githubusercontent.com/Dungeon-Makers/Armour-and-Item/1.16.x/update.json"
 credits="Custom Armour and Items by Yusuf Arfan Ismail."
-
 authors="Dungeon Makers" #optional
 description='''
 A mod which add custom armour and items.
