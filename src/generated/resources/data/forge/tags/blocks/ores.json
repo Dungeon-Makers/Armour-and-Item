@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "#forge:ores/black_diamond",
+    "#forge:ores/purple_diamond",
     "#forge:storage_blocks/black_diamond"
   ]
 }
