@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "armouranditem:purple_diamond_block"
+    }
+  ],
+  "result": {
+    "item": "armouranditem:purple_diamond",
+    "count": 9
+  }
+}

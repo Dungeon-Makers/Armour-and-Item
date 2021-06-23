@@ -6,6 +6,8 @@ import com.yusuf.armouranditem.core.init.ItemInit;
 import com.yusuf.armouranditem.core.init.TagsInit;
 import net.minecraft.data.*;
 import net.minecraft.item.Items;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.function.Consumer;
@@ -40,7 +42,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_item", has(TagsInit.Items.INGOTS_PURPLE_DIAMOND))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(BlockInit.BLACK_DIAMOND_BLOCK.get())
+        ShapedRecipeBuilder.shaped(BlockInit.PURPLE_DIAMOND_BLOCK.get())
                 .define('#',TagsInit.Items.INGOTS_PURPLE_DIAMOND)
                 .pattern("###")
                 .pattern("###")
@@ -50,8 +52,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
         //scraps
 
-        ShapelessRecipeBuilder.shapeless(ItemInit.BLACK_DIAMOND.get(), 1)
-
+         ShapelessRecipeBuilder.shapeless(ItemInit.BLACK_DIAMOND.get(), 1)
                 .requires(TagsInit.Items.SCRAP_BLACK_DIAMOND_SCRAP)
                 .requires(TagsInit.Items.SCRAP_BLACK_DIAMOND_SCRAP)
                 .requires(TagsInit.Items.SCRAP_BLACK_DIAMOND_SCRAP)
@@ -105,5 +106,8 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_item", has(TagsInit.Items.INGOTS_BLACK_DIAMOND))
                 .save(consumer,modId("black_diamond_sword"));
 
+    }
+    private Ingredient ingredient(IItemProvider entry) {
+        return Ingredient.of(entry);
     }
 }

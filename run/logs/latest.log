@@ -1,48 +1,23 @@
-[23Jun2021 17:28:30.818] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--mod, armouranditem, --all, --output, /Users/YusufIsmail/Documents/GitHub/Armour-and-Item/src/generated/resources, --existing, /Users/YusufIsmail/Documents/GitHub/Armour-and-Item/src/main/resources, --gameDir, ., --launchTarget, fmluserdevdata, --fml.mcpVersion, 20210115.111550, --fml.mcVersion, 1.16.5, --fml.forgeGroup, net.minecraftforge, --fml.forgeVersion, 36.1.2]
-[23Jun2021 17:28:30.836] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 8.0.9+86+master.3cf110c starting: java version 1.8.0_292 by AdoptOpenJDK
-[23Jun2021 17:28:35.001] [main/INFO] [net.minecraftforge.fml.loading.FixSSL/CORE]: Added Lets Encrypt root certificates as additional trust
-[23Jun2021 17:28:35.634] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.2 Source=file:/Users/YusufIsmail/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.2/1cf212283d26f706fd3074318870bebd14d2a9ed/mixin-0.8.2.jar Service=ModLauncher Env=UNKNOWN
-[23Jun2021 17:28:51.018] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'fmluserdevdata' with arguments [--gameDir, ., --mod, armouranditem, --all, --output, /Users/YusufIsmail/Documents/GitHub/Armour-and-Item/src/generated/resources, --existing, /Users/YusufIsmail/Documents/GitHub/Armour-and-Item/src/main/resources]
-[23Jun2021 17:28:51.966] [main/INFO] [net.minecraftforge.fml.DatagenModLoader/]: Initializing Data Gatherer for mods [armouranditem]
-[23Jun2021 17:29:48.548] [modloading-worker-3/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 36.1.2, for MC 1.16.5 with MCP 20210115.111550
-[23Jun2021 17:29:48.552] [modloading-worker-3/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v36.1.2 Initialized
-[23Jun2021 17:29:52.799] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: armouranditem
-[23Jun2021 17:29:53.438] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: armouranditem finished after 636 ms
-[23Jun2021 17:29:53.438] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: armouranditem
-[23Jun2021 17:29:53.566] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: armouranditem finished after 115 ms
-[23Jun2021 17:29:53.568] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block Tags
-[23Jun2021 17:29:53.638] [main/INFO] [net.minecraft.data.DataGenerator/]: Block Tags finished after 68 ms
-[23Jun2021 17:29:53.639] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Tags
-[23Jun2021 17:29:53.659] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Tags finished after 18 ms
-[23Jun2021 17:29:53.659] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: en_us
-[23Jun2021 17:29:54.100] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: en_us finished after 440 ms
-[23Jun2021 17:29:54.101] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Armour and Item - Loot Tables
-[23Jun2021 17:29:54.451] [main/INFO] [STDERR/]: [java.lang.ThreadGroup:uncaughtException:1052]: java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
-[23Jun2021 17:29:54.452] [main/INFO] [STDERR/]: [java.lang.ThreadGroup:uncaughtException:1052]: 	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:39)
-[23Jun2021 17:29:54.452] [main/INFO] [STDERR/]: [java.lang.ThreadGroup:uncaughtException:1052]: 	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54)
-[23Jun2021 17:29:54.452] [main/INFO] [STDERR/]: [java.lang.ThreadGroup:uncaughtException:1052]: 	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72)
-[23Jun2021 17:29:54.453] [main/INFO] [STDERR/]: [java.lang.ThreadGroup:uncaughtException:1052]: 	at cpw.mods.modlauncher.Launcher.run(Launcher.java:82)
-[23Jun2021 17:29:54.453] [main/INFO] [STDERR/]: [java.lang.ThreadGroup:uncaughtException:1052]: 	at cpw.mods.modlauncher.Launcher.main(Launcher.java:66)
-[23Jun2021 17:29:54.453] [main/INFO] [STDERR/]: [java.lang.ThreadGroup:uncaughtException:1052]: 	at net.minecraftforge.userdev.LaunchTesting.main(LaunchTesting.java:105)
-[23Jun2021 17:29:54.454] [main/INFO] [STDERR/]: [java.lang.ThreadGroup:uncaughtException:1061]: Caused by: java.lang.reflect.InvocationTargetException
-[23Jun2021 17:29:54.454] [main/INFO] [STDERR/]: [java.lang.ThreadGroup:uncaughtException:1061]: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-[23Jun2021 17:29:54.454] [main/INFO] [STDERR/]: [java.lang.ThreadGroup:uncaughtException:1061]: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-[23Jun2021 17:29:54.461] [main/INFO] [STDERR/]: [java.lang.ThreadGroup:uncaughtException:1061]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-[23Jun2021 17:29:54.461] [main/INFO] [STDERR/]: [java.lang.ThreadGroup:uncaughtException:1061]: 	at java.lang.reflect.Method.invoke(Method.java:498)
-[23Jun2021 17:29:54.462] [main/INFO] [STDERR/]: [java.lang.ThreadGroup:uncaughtException:1061]: 	at net.minecraftforge.userdev.FMLUserdevDataLaunchProvider.lambda$launchService$0(FMLUserdevDataLaunchProvider.java:51)
-[23Jun2021 17:29:54.463] [main/INFO] [STDERR/]: [java.lang.ThreadGroup:uncaughtException:1061]: 	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37)
-[23Jun2021 17:29:54.490] [main/INFO] [STDERR/]: [java.lang.ThreadGroup:uncaughtException:1061]: 	... 5 more
-[23Jun2021 17:29:54.492] [main/INFO] [STDERR/]: [java.lang.Throwable:printStackTrace:644]: Caused by: java.lang.IllegalStateException: Missing loottable 'armouranditem:blocks/purple_diamond_ore' for 'armouranditem:purple_diamond_ore'
-[23Jun2021 17:29:54.492] [main/INFO] [STDERR/]: [java.lang.Throwable:printStackTrace:644]: 	at net.minecraft.data.loot.BlockLootTables.accept(BlockLootTables.java:1080)
-[23Jun2021 17:29:54.493] [main/INFO] [STDERR/]: [java.lang.Throwable:printStackTrace:644]: 	at net.minecraft.data.loot.BlockLootTables.accept(BlockLootTables.java:83)
-[23Jun2021 17:29:54.496] [main/INFO] [STDERR/]: [java.lang.Throwable:printStackTrace:644]: 	at net.minecraft.data.LootTableProvider.lambda$run$1(LootTableProvider.java:47)
-[23Jun2021 17:29:54.496] [main/INFO] [STDERR/]: [java.lang.Throwable:printStackTrace:644]: 	at com.google.common.collect.ImmutableList.forEach(ImmutableList.java:408)
-[23Jun2021 17:29:54.497] [main/INFO] [STDERR/]: [java.lang.Throwable:printStackTrace:644]: 	at net.minecraft.data.LootTableProvider.run(LootTableProvider.java:46)
-[23Jun2021 17:29:54.497] [main/INFO] [STDERR/]: [java.lang.Throwable:printStackTrace:644]: 	at net.minecraft.data.DataGenerator.run(DataGenerator.java:44)
-[23Jun2021 17:29:54.497] [main/INFO] [STDERR/]: [java.lang.Throwable:printStackTrace:644]: 	at net.minecraftforge.fml.event.lifecycle.GatherDataEvent$DataGeneratorConfig.lambda$runAll$0(GatherDataEvent.java:111)
-[23Jun2021 17:29:54.497] [main/INFO] [STDERR/]: [java.lang.Throwable:printStackTrace:644]: 	at cpw.mods.modlauncher.api.LamdbaExceptionUtils.lambda$rethrowConsumer$0(LamdbaExceptionUtils.java:34)
-[23Jun2021 17:29:54.499] [main/INFO] [STDERR/]: [java.lang.Throwable:printStackTrace:644]: 	at java.util.HashMap$Values.forEach(HashMap.java:981)
-[23Jun2021 17:29:54.499] [main/INFO] [STDERR/]: [java.lang.Throwable:printStackTrace:644]: 	at net.minecraftforge.fml.event.lifecycle.GatherDataEvent$DataGeneratorConfig.runAll(GatherDataEvent.java:107)
-[23Jun2021 17:29:54.500] [main/INFO] [STDERR/]: [java.lang.Throwable:printStackTrace:644]: 	at net.minecraftforge.fml.DatagenModLoader.begin(DatagenModLoader.java:61)
-[23Jun2021 17:29:54.500] [main/INFO] [STDERR/]: [java.lang.Throwable:printStackTrace:644]: 	at net.minecraft.data.Main.main(Main.java:43)
-[23Jun2021 17:29:54.500] [main/INFO] [STDERR/]: [java.lang.Throwable:printStackTrace:644]: 	... 11 more
+[23Jun2021 18:17:33.637] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--mod, armouranditem, --all, --output, /Users/YusufIsmail/Documents/GitHub/Armour-and-Item/src/generated/resources, --existing, /Users/YusufIsmail/Documents/GitHub/Armour-and-Item/src/main/resources, --gameDir, ., --launchTarget, fmluserdevdata, --fml.mcpVersion, 20210115.111550, --fml.mcVersion, 1.16.5, --fml.forgeGroup, net.minecraftforge, --fml.forgeVersion, 36.1.2]
+[23Jun2021 18:17:33.654] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 8.0.9+86+master.3cf110c starting: java version 1.8.0_292 by AdoptOpenJDK
+[23Jun2021 18:17:35.370] [main/INFO] [net.minecraftforge.fml.loading.FixSSL/CORE]: Added Lets Encrypt root certificates as additional trust
+[23Jun2021 18:17:35.696] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.2 Source=file:/Users/YusufIsmail/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.2/1cf212283d26f706fd3074318870bebd14d2a9ed/mixin-0.8.2.jar Service=ModLauncher Env=UNKNOWN
+[23Jun2021 18:17:46.958] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'fmluserdevdata' with arguments [--gameDir, ., --mod, armouranditem, --all, --output, /Users/YusufIsmail/Documents/GitHub/Armour-and-Item/src/generated/resources, --existing, /Users/YusufIsmail/Documents/GitHub/Armour-and-Item/src/main/resources]
+[23Jun2021 18:17:47.773] [main/INFO] [net.minecraftforge.fml.DatagenModLoader/]: Initializing Data Gatherer for mods [armouranditem]
+[23Jun2021 18:18:37.370] [modloading-worker-2/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 36.1.2, for MC 1.16.5 with MCP 20210115.111550
+[23Jun2021 18:18:37.372] [modloading-worker-2/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v36.1.2 Initialized
+[23Jun2021 18:18:40.754] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: armouranditem
+[23Jun2021 18:18:41.297] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: armouranditem finished after 534 ms
+[23Jun2021 18:18:41.301] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: armouranditem
+[23Jun2021 18:18:41.372] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: armouranditem finished after 68 ms
+[23Jun2021 18:18:41.373] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block Tags
+[23Jun2021 18:18:41.465] [main/INFO] [net.minecraft.data.DataGenerator/]: Block Tags finished after 89 ms
+[23Jun2021 18:18:41.465] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Tags
+[23Jun2021 18:18:41.473] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Tags finished after 7 ms
+[23Jun2021 18:18:41.474] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: en_us
+[23Jun2021 18:18:41.744] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: en_us finished after 269 ms
+[23Jun2021 18:18:41.745] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Armour and Item - Loot Tables
+[23Jun2021 18:18:42.124] [main/INFO] [net.minecraft.data.DataGenerator/]: Armour and Item - Loot Tables finished after 376 ms
+[23Jun2021 18:18:42.125] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[23Jun2021 18:18:42.381] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 256 ms
+[23Jun2021 18:18:42.382] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 1627 ms
