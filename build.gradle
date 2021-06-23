@@ -13,7 +13,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 
-version = 'armouranditem-1.16.5-2'
+version = '1.16.5-2'
 group = 'com.yusuf.armouranditem' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'armouranditem'
 

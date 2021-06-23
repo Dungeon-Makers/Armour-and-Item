@@ -19,6 +19,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(TagsInit.Blocks.ORES_BLACK_DIAMOND).add(BlockInit.BLACK_DIAMOND_ORE.get());
         tag(Tags.Blocks.ORES).addTag(TagsInit.Blocks.ORES_BLACK_DIAMOND);
 
+        tag(TagsInit.Blocks.ORES_PURPLE_DIAMOND).add(BlockInit.PURPLE_DIAMOND_ORE.get());
+        tag(Tags.Blocks.ORES).addTag(TagsInit.Blocks.ORES_PURPLE_DIAMOND);
+
         //blocks
         tag(TagsInit.Blocks.STORAGE_BLACK_DIAMOND).add(BlockInit.BLACK_DIAMOND_BLOCK.get());
         tag(Tags.Blocks.ORES).addTag(TagsInit.Blocks.STORAGE_BLACK_DIAMOND);

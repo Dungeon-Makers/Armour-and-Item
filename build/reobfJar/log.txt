@@ -1,4 +1,4 @@
-Args: "--in-jar", "/Users/YusufIsmail/Documents/GitHub/Armour-and-Item/build/libs/armouranditem-armouranditem-1.16.5-2.jar", "--out-jar", "/Users/YusufIsmail/Documents/GitHub/Armour-and-Item/build/reobfJar/output.jar", "--srg-in", "/Users/YusufIsmail/Documents/GitHub/Armour-and-Item/build/createMcpToSrg/output.tsrg", "--live"
+Args: "--in-jar", "/Users/YusufIsmail/Documents/GitHub/Armour-and-Item/build/libs/armouranditem-1.16.5-2.jar", "--out-jar", "/Users/YusufIsmail/Documents/GitHub/Armour-and-Item/build/reobfJar/output.jar", "--srg-in", "/Users/YusufIsmail/Documents/GitHub/Armour-and-Item/build/createMcpToSrg/output.tsrg", "--live"
 Classpath: /Users/YusufIsmail/.gradle/caches/forge_gradle/maven_downloader/net/md-5/SpecialSource/1.9.0/SpecialSource-1.9.0-shaded.jar
 Classpath: /Users/YusufIsmail/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.5-36.1.2_mapped_official_1.16.5/forge-1.16.5-36.1.2_mapped_official_1.16.5-recomp.jar
 Classpath: /Users/YusufIsmail/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.5-36.1.2_mapped_official_1.16.5/forge-1.16.5-36.1.2_mapped_official_1.16.5-launcher.jar

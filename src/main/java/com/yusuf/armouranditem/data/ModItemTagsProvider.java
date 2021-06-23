@@ -17,6 +17,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     protected void addTags() {
         //ores
         copy(TagsInit.Blocks.ORES_BLACK_DIAMOND, TagsInit.Items.ORES_BLACK_DIAMOND);
+        copy(TagsInit.Blocks.ORES_PURPLE_DIAMOND, TagsInit.Items.ORES_PURPLE_DIAMOND);
 
         //blocks
         copy(TagsInit.Blocks.STORAGE_BLACK_DIAMOND, TagsInit.Items.STORAGE_BLACK_DIAMOND);
