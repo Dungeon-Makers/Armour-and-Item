@@ -1,4 +1,4 @@
-package com.yusuf.armouranditem.data;
+package com.yusuf.armouranditem.data.tags;
 
 import com.yusuf.armouranditem.ArmourAndItem;
 import com.yusuf.armouranditem.core.init.BlockInit;
@@ -25,5 +25,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         //blocks
         tag(TagsInit.Blocks.STORAGE_BLACK_DIAMOND).add(BlockInit.BLACK_DIAMOND_BLOCK.get());
         tag(Tags.Blocks.ORES).addTag(TagsInit.Blocks.STORAGE_BLACK_DIAMOND);
+
+        tag(TagsInit.Blocks.STORAGE_PURPLE_DIAMOND).add(BlockInit.PURPLE_DIAMOND_BLOCK.get());
+        tag(Tags.Blocks.ORES).addTag(TagsInit.Blocks.STORAGE_PURPLE_DIAMOND);
     }
 }

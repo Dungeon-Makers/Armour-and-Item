@@ -1,4 +1,4 @@
-package com.yusuf.armouranditem.data;
+package com.yusuf.armouranditem.data.recipe;
 
 import com.yusuf.armouranditem.ArmourAndItem;
 import com.yusuf.armouranditem.core.init.BlockInit;
@@ -33,6 +33,19 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("###")
                 .pattern("###")
                 .unlockedBy("has_item", has(TagsInit.Items.INGOTS_BLACK_DIAMOND))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(ItemInit.PURPLE_DIAMOND.get(), 9)
+                .requires(BlockInit.PURPLE_DIAMOND_BLOCK.get())
+                .unlockedBy("has_item", has(TagsInit.Items.INGOTS_PURPLE_DIAMOND))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(BlockInit.BLACK_DIAMOND_BLOCK.get())
+                .define('#',TagsInit.Items.INGOTS_PURPLE_DIAMOND)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_item", has(TagsInit.Items.INGOTS_PURPLE_DIAMOND))
                 .save(consumer);
 
         //scraps

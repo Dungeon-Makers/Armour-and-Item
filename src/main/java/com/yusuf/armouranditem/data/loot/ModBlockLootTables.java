@@ -27,7 +27,7 @@ public class ModBlockLootTables extends BlockLootTables {
         //blocks
 
         dropSelf(BlockInit.BLACK_DIAMOND_BLOCK.get());
-       // registerDropSelfLootTable(BlockInit.INFINITUM_BLOCK.get());
+
     }
 
     @Override

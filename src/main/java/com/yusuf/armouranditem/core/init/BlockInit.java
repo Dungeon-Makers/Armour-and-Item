@@ -20,7 +20,9 @@ public class BlockInit {
  //blocks
 
     public static final RegistryObject<GeneralBlock> BLACK_DIAMOND_BLOCK = register("black_diamond_block", Blocks.ANCIENT_DEBRIS);
-//ores
+
+    public static final RegistryObject<GeneralBlock> PURPLE_DIAMOND_BLOCK = register("purple_diamond_block", Blocks.ANCIENT_DEBRIS);
+    //ores
     public static final RegistryObject<GeneralBlock> BLACK_DIAMOND_ORE = register("black_diamond_ore", Blocks.ANCIENT_DEBRIS);
 
     public static final RegistryObject<GeneralBlock> PURPLE_DIAMOND_ORE = register("purple_diamond_ore", Blocks.ANCIENT_DEBRIS);
