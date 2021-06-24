@@ -87,16 +87,22 @@ minecraft {
 sourceSets.main.resources {
     srcDir 'src/generated/resources'
 }
-
+def gpr_creds = {
+    username = property('gpr.username')
+    password = property('gpr.token')
+}
 repositories {
-
+    maven {
+        url = uri("https://maven.pkg.github.com/realyusufismail/realyusufismail-core")
+        credentials gpr_creds
+    }
 }
 
 dependencies {
-
         minecraft 'net.minecraftforge:forge:1.16.5-36.1.2'
-
-
+    compile fg.deobf("net.yusuf:realyusufismailcore:${project.ryic_version}") {
+        exclude module: "forge"
+    }
 }
 
 
