@@ -13,9 +13,9 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 
-version = "${mod_version}"
-group = 'com.yusuf'
-archivesBaseName = mod_id
+version = '1.16.5-3'
+group = 'com.yusuf.armouranditem' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'armouranditem'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.
 
@@ -83,9 +83,9 @@ repositories {
 
 dependencies {
         minecraft 'net.minecraftforge:forge:1.16.5-36.1.2'
-        compile fg.deobf("net.yusuf:realyusufismailcore:1.16.5-4.3") {
-          exclude module: "forge"
-     }
+    compile fg.deobf("net.yusuf:realyusufismailcore:${project.ryic_version}") {
+        exclude module: "forge"
+    }
 }
 
 
@@ -106,24 +106,17 @@ jar {
     }
 }
 
+
 jar.finalizedBy('reobfJar')
 publishing {
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/dungeon-maker/${project.repoName}")
-            credentials {
-                username = property('gpr.username')
-                password = property('gpr.token')
-            }
+    publications {
+        mavenJava(MavenPublication) {
+            artifact jar
         }
     }
-    publications {
-        maven(MavenPublication) {
-            artifactId = mod_id // <<< this line here
-            artifacts {
-                artifact jar
-            }
+    repositories {
+        maven {
+            url "file:///${project.projectDir}/mcmodsrepo"
         }
     }
 }
