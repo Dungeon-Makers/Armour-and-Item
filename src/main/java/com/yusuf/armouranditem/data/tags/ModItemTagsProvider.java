@@ -13,6 +13,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     public ModItemTagsProvider(DataGenerator dataGenerator, BlockTagsProvider blockTagProvider, ExistingFileHelper existingFileHelper) {
         super(dataGenerator, blockTagProvider, ArmourAndItem.MOD_ID, existingFileHelper);
     }
+
     @Override
     protected void addTags() {
         //ores

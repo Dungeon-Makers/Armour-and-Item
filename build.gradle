@@ -56,8 +56,6 @@ minecraft {
             args '--mod', 'armouranditem', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources')
 
 
-
-
             mods {
                 armouranditem {
                     source sourceSets.main
@@ -82,25 +80,22 @@ repositories {
 }
 
 dependencies {
-        minecraft 'net.minecraftforge:forge:1.16.5-36.1.2'
+    minecraft 'net.minecraftforge:forge:1.16.5-36.1.2'
     compile fg.deobf("net.yusuf:realyusufismailcore:${project.ryic_version}") {
         exclude module: "forge"
     }
 }
 
 
-
-
-
 jar {
     manifest {
         attributes([
-                "Specification-Title": "armouranditem",
-                "Specification-Vendor": "Yusuf.I",
-                "Specification-Version": "1", // We are version 1 of ourselves
-                "Implementation-Title": project.name,
-                "Implementation-Version": "${version}",
-                "Implementation-Vendor" :"Yusuf.I",
+                "Specification-Title"     : "armouranditem",
+                "Specification-Vendor"    : "Yusuf.I",
+                "Specification-Version"   : "1", // We are version 1 of ourselves
+                "Implementation-Title"    : project.name,
+                "Implementation-Version"  : "${version}",
+                "Implementation-Vendor"   : "Yusuf.I",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }

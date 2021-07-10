@@ -1,4 +1,3 @@
-
 package com.yusuf.armouranditem.data.client;
 
 import com.yusuf.armouranditem.ArmourAndItem;
@@ -14,7 +13,6 @@ public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
         super(generator, ArmourAndItem.MOD_ID, existingFileHelper);
     }
-
 
 
     @Override
@@ -47,14 +45,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         tool(itemhandHeld, "black_diamond_sword");
 
 
-
     }
 
     private ItemModelBuilder builder(ModelFile itemGenerated, String name) {
         return getBuilder(name).parent(itemGenerated).texture("layer0", "item/" + name);
     }
+
     private ItemModelBuilder tool(ModelFile itemhandHeld, String name) {
-        return getBuilder(name).parent(itemhandHeld).texture("layer0",  "item/" + name);
+        return getBuilder(name).parent(itemhandHeld).texture("layer0", "item/" + name);
     }
 }
 

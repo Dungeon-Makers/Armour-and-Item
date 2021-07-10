@@ -24,7 +24,7 @@ public class ArmourAndItem {
         BlockInit.BLOCKS.register(bus);
 
 
-       MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, FeatureInit::addOres);
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, FeatureInit::addOres);
         MinecraftForge.EVENT_BUS.register(this);
 
     }

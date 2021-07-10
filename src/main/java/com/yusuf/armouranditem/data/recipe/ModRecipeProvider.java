@@ -22,6 +22,7 @@ public class ModRecipeProvider extends RecipeProvider {
     private static ResourceLocation modId(String path) {
         return new ResourceLocation(ArmourAndItem.MOD_ID, path);
     }
+
     @Override
     protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer) {
         ShapelessRecipeBuilder.shapeless(ItemInit.BLACK_DIAMOND.get(), 9)
@@ -30,7 +31,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(BlockInit.BLACK_DIAMOND_BLOCK.get())
-                .define('#',TagsInit.Items.INGOTS_BLACK_DIAMOND)
+                .define('#', TagsInit.Items.INGOTS_BLACK_DIAMOND)
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
@@ -43,7 +44,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(BlockInit.PURPLE_DIAMOND_BLOCK.get())
-                .define('#',TagsInit.Items.INGOTS_PURPLE_DIAMOND)
+                .define('#', TagsInit.Items.INGOTS_PURPLE_DIAMOND)
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
@@ -52,7 +53,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
         //scraps
 
-         ShapelessRecipeBuilder.shapeless(ItemInit.BLACK_DIAMOND.get(), 1)
+        ShapelessRecipeBuilder.shapeless(ItemInit.BLACK_DIAMOND.get(), 1)
                 .requires(TagsInit.Items.SCRAP_BLACK_DIAMOND_SCRAP)
                 .requires(TagsInit.Items.SCRAP_BLACK_DIAMOND_SCRAP)
                 .requires(TagsInit.Items.SCRAP_BLACK_DIAMOND_SCRAP)
@@ -71,7 +72,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("A A")
                 .pattern("   ")
                 .unlockedBy("has_item", has(TagsInit.Items.INGOTS_BLACK_DIAMOND))
-                .save(consumer,modId("black_diamond_helmet"));
+                .save(consumer, modId("black_diamond_helmet"));
 
         ShapedRecipeBuilder.shaped(ItemInit.BLACK_DIAMOND_CHESTPLATE.get())
                 .define('A', TagsInit.Items.INGOTS_BLACK_DIAMOND)
@@ -79,7 +80,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("AAA")
                 .pattern("AAA")
                 .unlockedBy("has_item", has(TagsInit.Items.INGOTS_BLACK_DIAMOND))
-                .save(consumer,modId("black_diamond_chestplate"));
+                .save(consumer, modId("black_diamond_chestplate"));
 
         ShapedRecipeBuilder.shaped(ItemInit.BLACK_DIAMOND_LEGGINGS.get())
                 .define('A', TagsInit.Items.INGOTS_BLACK_DIAMOND)
@@ -87,7 +88,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("A A")
                 .pattern("A A")
                 .unlockedBy("has_item", has(TagsInit.Items.INGOTS_BLACK_DIAMOND))
-                .save(consumer,modId("black_diamond_leggings"));
+                .save(consumer, modId("black_diamond_leggings"));
 
         ShapedRecipeBuilder.shaped(ItemInit.BLACK_DIAMOND_BOOTS.get())
                 .define('A', TagsInit.Items.INGOTS_BLACK_DIAMOND)
@@ -95,7 +96,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("A A")
                 .pattern("A A")
                 .unlockedBy("has_item", has(TagsInit.Items.INGOTS_BLACK_DIAMOND))
-                .save(consumer,modId("black_diamond_boot"));
+                .save(consumer, modId("black_diamond_boot"));
 
         ShapedRecipeBuilder.shaped(ItemInit.BLACK_DIAMOND_SWORD.get())
                 .define('#', Items.STICK.getItem())
@@ -104,7 +105,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern(" K ")
                 .pattern(" # ")
                 .unlockedBy("has_item", has(TagsInit.Items.INGOTS_BLACK_DIAMOND))
-                .save(consumer,modId("black_diamond_sword"));
+                .save(consumer, modId("black_diamond_sword"));
 
         ShapedRecipeBuilder.shaped(ItemInit.PURPLE_DIAMOND_HELMET.get())
                 .define('A', TagsInit.Items.INGOTS_PURPLE_DIAMOND)
@@ -112,7 +113,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("A A")
                 .pattern("   ")
                 .unlockedBy("has_item", has(TagsInit.Items.INGOTS_PURPLE_DIAMOND))
-                .save(consumer,modId("purple_diamond_helmet"));
+                .save(consumer, modId("purple_diamond_helmet"));
 
         ShapedRecipeBuilder.shaped(ItemInit.PURPLE_DIAMOND_CHESTPLATE.get())
                 .define('A', TagsInit.Items.INGOTS_PURPLE_DIAMOND)
@@ -120,7 +121,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("AAA")
                 .pattern("AAA")
                 .unlockedBy("has_item", has(TagsInit.Items.INGOTS_PURPLE_DIAMOND))
-                .save(consumer,modId("purple_diamond_chestplate"));
+                .save(consumer, modId("purple_diamond_chestplate"));
 
         ShapedRecipeBuilder.shaped(ItemInit.PURPLE_DIAMOND_LEGGINGS.get())
                 .define('A', TagsInit.Items.INGOTS_PURPLE_DIAMOND)
@@ -128,7 +129,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("A A")
                 .pattern("A A")
                 .unlockedBy("has_item", has(TagsInit.Items.INGOTS_PURPLE_DIAMOND))
-                .save(consumer,modId("purple_diamond_leggings"));
+                .save(consumer, modId("purple_diamond_leggings"));
 
         ShapedRecipeBuilder.shaped(ItemInit.PURPLE_DIAMOND_BOOTS.get())
                 .define('A', TagsInit.Items.INGOTS_PURPLE_DIAMOND)
@@ -136,7 +137,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("A A")
                 .pattern("A A")
                 .unlockedBy("has_item", has(TagsInit.Items.INGOTS_PURPLE_DIAMOND))
-                .save(consumer,modId("purple_diamond_boot"));
+                .save(consumer, modId("purple_diamond_boot"));
 
         ShapedRecipeBuilder.shaped(ItemInit.PURPLE_DIAMOND_SWORD.get())
                 .define('#', Items.STICK.getItem())
@@ -145,9 +146,10 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern(" K ")
                 .pattern(" # ")
                 .unlockedBy("has_item", has(TagsInit.Items.INGOTS_PURPLE_DIAMOND))
-                .save(consumer,modId("purple_diamond_sword"));
+                .save(consumer, modId("purple_diamond_sword"));
 
     }
+
     private Ingredient ingredient(IItemProvider entry) {
         return Ingredient.of(entry);
     }

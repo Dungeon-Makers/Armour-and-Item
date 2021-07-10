@@ -20,10 +20,10 @@ public class ModBlockLootTables extends BlockLootTables {
                 createOreDrop(BlockInit.PURPLE_DIAMOND_ORE.get(), ItemInit.PURPLE_DIAMOND.get()));
 
 
-/*
+        /*
 
 
- */
+         */
         //blocks
 
         dropSelf(BlockInit.BLACK_DIAMOND_BLOCK.get());

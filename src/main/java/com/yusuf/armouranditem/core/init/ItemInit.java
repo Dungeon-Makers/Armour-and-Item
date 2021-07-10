@@ -36,7 +36,6 @@ public class ItemInit {
                     new Item.Properties().stacksTo(1).durability(600).tab(MainItemGroup.MAIN)));
 
 
-
     // black diamond armour
     public static final RegistryObject<Item> BLACK_DIAMOND_HELMET = ITEMS.register("black_diamond_helmet",
             () -> new ArmorItem(CustomArmorMaterial.BLACK_DIAMOND_ARMOUR, EquipmentSlotType.HEAD,

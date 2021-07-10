@@ -3,7 +3,6 @@ package com.yusuf.armouranditem.common.material;
 import com.yusuf.armouranditem.core.init.ItemInit;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -12,12 +11,12 @@ import java.util.function.Supplier;
 
 public enum CustomArmorMaterial implements IArmorMaterial {
 
-    BLACK_DIAMOND_ARMOUR("black_diamond", 100, new int[] { 8, 9, 20, 6 }, 20, SoundEvents.ARMOR_EQUIP_NETHERITE, 1000f, 10f,
+    BLACK_DIAMOND_ARMOUR("black_diamond", 100, new int[]{8, 9, 20, 6}, 20, SoundEvents.ARMOR_EQUIP_NETHERITE, 1000f, 10f,
             () -> Ingredient.of(ItemInit.BLACK_DIAMOND.get())),
-    PURPLE_DIAMOND_ARMOUR("purple_diamond", 100, new int[] { 10, 10, 20, 8 }, 20, SoundEvents.ARMOR_EQUIP_NETHERITE, 1100f, 10f,
+    PURPLE_DIAMOND_ARMOUR("purple_diamond", 100, new int[]{10, 10, 20, 8}, 20, SoundEvents.ARMOR_EQUIP_NETHERITE, 1100f, 10f,
             () -> Ingredient.of(ItemInit.BLACK_DIAMOND.get()));
 
-    private static final int[] baseDurability = { 128, 144, 160, 112 };
+    private static final int[] baseDurability = {128, 144, 160, 112};
     private final String name;
     private final int durabilityMultiplier;
     private final int[] armorVal;

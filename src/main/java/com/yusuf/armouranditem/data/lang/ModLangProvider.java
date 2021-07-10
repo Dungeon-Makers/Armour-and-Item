@@ -47,9 +47,11 @@ public class ModLangProvider extends LanguageProvider {
         //others
         add(MainItemGroup.MAIN.getDisplayName().getString(), "Armour and Item Tab");
     }
+
     private <T extends Item> void item(RegistryObject<T> entry, String name) {
         add(entry.get(), name);
     }
+
     private <T extends Block> void block(RegistryObject<T> entry, String name) {
         add(entry.get(), name);
     }

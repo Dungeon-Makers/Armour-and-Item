@@ -12,7 +12,6 @@ public enum CustomToolMaterial implements IItemTier {
     PURPLE_DIAMOND_SWORD(20, 2000, 60f, 14f, 40, () -> Ingredient.of(ItemInit.BLACK_DIAMOND.get()));
 
 
-
     private final int harvestLevel;
     private final int maxUses;
     private final float efficiency;
@@ -59,4 +58,4 @@ public enum CustomToolMaterial implements IItemTier {
         return this.repairMaterial;
     }
 
-    }
+}

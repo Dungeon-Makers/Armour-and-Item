@@ -19,11 +19,11 @@ public class FeatureInit {
         addOre(event, OreFeatureConfig.FillerBlockType.NATURAL_STONE,
                 BlockInit.PURPLE_DIAMOND_BLOCK.get().defaultBlockState(), 3, 0, 13, 5);
 
-
         addOre(event, OreFeatureConfig.FillerBlockType.NATURAL_STONE,
                 BlockInitCore.COPPER_ORE.get().defaultBlockState(), 5, 0, 17, 6);
 
     }
+
     public static void addOre(final BiomeLoadingEvent event, RuleTest rule, BlockState state, int veinSize,
                               int minHeight, int maxHeight, int amount) {
         event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,

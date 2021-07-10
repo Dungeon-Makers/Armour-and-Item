@@ -10,6 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.yusuf.realyusufismailcore.core.init.GeneralBlock;
 
 import java.util.function.Supplier;
 
@@ -17,7 +18,7 @@ import static com.yusuf.armouranditem.core.init.ItemInit.ITEMS;
 
 public class BlockInit {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ArmourAndItem.MOD_ID);
- //blocks
+    //blocks
 
     public static final RegistryObject<GeneralBlock> BLACK_DIAMOND_BLOCK = register("black_diamond_block", Blocks.ANCIENT_DEBRIS);
 
@@ -39,6 +40,7 @@ public class BlockInit {
         ITEMS.register(name, () -> new BlockItem(blockReg.get(), new Item.Properties().tab(MainItemGroup.MAIN)));
         return blockReg;
     }
+
     private static RegistryObject<GeneralBlock> register(String name, Block existingBlock) {
         return register(name, () -> new GeneralBlock(AbstractBlock.Properties.copy(existingBlock)));
     }
