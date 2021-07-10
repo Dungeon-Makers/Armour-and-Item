@@ -3,18 +3,26 @@ package com.yusuf.armouranditem.common.material;
 import com.yusuf.armouranditem.core.init.ItemInit;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.yusuf.realyusufismailcore.core.init.ItemInitCore;
 
 import java.util.function.Supplier;
 
 public enum CustomArmorMaterial implements IArmorMaterial {
-
-    BLACK_DIAMOND_ARMOUR("black_diamond", 100, new int[]{8, 9, 20, 6}, 20, SoundEvents.ARMOR_EQUIP_NETHERITE, 1000f, 10f,
+    /**
+     * @see net.minecraft.item.ArmorMaterial
+     */
+    BLACK_DIAMOND_ARMOUR("black_diamond", 40, new int[]{8, 9, 20, 6}, 20, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.4f,
             () -> Ingredient.of(ItemInit.BLACK_DIAMOND.get())),
-    PURPLE_DIAMOND_ARMOUR("purple_diamond", 100, new int[]{10, 10, 20, 8}, 20, SoundEvents.ARMOR_EQUIP_NETHERITE, 1100f, 10f,
-            () -> Ingredient.of(ItemInit.BLACK_DIAMOND.get()));
+    PURPLE_DIAMOND_ARMOUR("purple_diamond", 50, new int[]{10, 10, 20, 8}, 20, SoundEvents.ARMOR_EQUIP_NETHERITE, 8.0F, 0.8f,
+            () -> Ingredient.of(ItemInit.PURPLE_DIAMOND.get())),
+    COPPER_ARMOUR("copper", 16, new int[]{3, 4, 7, 3}, 10, SoundEvents.ARMOR_EQUIP_IRON, 0.1F, 0.1F,
+            () -> Ingredient.of(ItemInitCore.COPPER.get()));
 
     private static final int[] baseDurability = {128, 144, 160, 112};
     private final String name;
@@ -65,6 +73,7 @@ public enum CustomArmorMaterial implements IArmorMaterial {
     }
 
     @Override
+    @OnlyIn(Dist.CLIENT)
     public String getName() {
         return this.name;
     }
@@ -78,5 +87,4 @@ public enum CustomArmorMaterial implements IArmorMaterial {
     public float getKnockbackResistance() {
         return this.knockbackResistance;
     }
-
 }
