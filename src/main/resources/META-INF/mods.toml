@@ -27,7 +27,12 @@ mandatory = true
 versionRange = "[1.16.5,)"
 ordering = "NONE"
 side = "BOTH"
-
+[[dependencies.armouranditem]]
+modId = "realyusufismailcore"
+mandatory = true
+versionRange = "[1.16.5-4.3.3.2,)"
+ordering = "NONE"
+side = "BOTH"
 
 
 
