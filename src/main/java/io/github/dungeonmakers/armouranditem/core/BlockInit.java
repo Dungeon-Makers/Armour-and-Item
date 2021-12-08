@@ -14,6 +14,9 @@ public enum BlockInit {
   public static final DeferredRegister<Block> BLOCKS =
       DeferredRegister.create(ForgeRegistries.BLOCKS, ArmourAndItem.MOD_ID);
 
-  public static final RegistryObject<GeneralBlock> BLACK_DIAMOND =
-      register("copper_ore", Blocks.IRON_ORE);
+  public static final RegistryObject<GeneralBlock> BLACK_DIAMOND_ORE =
+      register("black_diamond_ore", Blocks.DIAMOND_ORE);
+
+  public static final RegistryObject<GeneralBlock> BLACK_DIAMOND_BLOCK =
+      register("black_diamond_block", Blocks.DIAMOND_BLOCK);
 }

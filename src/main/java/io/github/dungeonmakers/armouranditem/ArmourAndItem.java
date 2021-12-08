@@ -11,6 +11,7 @@ import org.apache.logging.log4j.Logger;
 public class ArmourAndItem {
   public static final Logger LOGGER = LogManager.getLogger();
   public static final String MOD_ID = "armouranditem";
+  public static final String MOD_NAME = "Armour and Item";
 
   private ArmourAndItem() {
     final var bus = FMLJavaModLoadingContext.get().getModEventBus();
