@@ -9,12 +9,12 @@ import org.apache.logging.log4j.Logger;
 
 @Mod(ArmourAndItem.MOD_ID)
 public class ArmourAndItem {
-    public static final Logger LOGGER = LogManager.getLogger();
-    public static final String MOD_ID = "armouranditem";
+  public static final Logger LOGGER = LogManager.getLogger();
+  public static final String MOD_ID = "armouranditem";
 
-    private ArmourAndItem() {
-        final var bus = FMLJavaModLoadingContext.get().getModEventBus();
-        BlockInit.BLOCKS.register(bus);
-        ItemInit.ITEMS.register(bus);
-    }
+  private ArmourAndItem() {
+    final var bus = FMLJavaModLoadingContext.get().getModEventBus();
+    BlockInit.BLOCKS.register(bus);
+    ItemInit.ITEMS.register(bus);
+  }
 }
