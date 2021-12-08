@@ -16,6 +16,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ItemTextureProvider extends ItemModelProvider {
+  private static final String GENERATED_ITEM = "item/generated";
 
   public ItemTextureProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
     super(generator, ArmourAndItem.MOD_ID, existingFileHelper);
@@ -24,11 +25,9 @@ public class ItemTextureProvider extends ItemModelProvider {
   @Override
   protected void registerModels() {
     // blocks
-    BlockInit.BLOCKS.getEntries().stream()
-            .map(RegistryObject::get)
-            .forEach(this::blockItemModel);
+    BlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(this::blockItemModel);
 
-    ModelFile itemGenerated = getExistingFile(new ResourceLocation("item/generated"));
+    ModelFile itemGenerated = getExistingFile(new ResourceLocation(GENERATED_ITEM));
 
     // items
     builder(ItemInit.BLACK_DIAMOND.get(), itemGenerated);
@@ -36,9 +35,9 @@ public class ItemTextureProvider extends ItemModelProvider {
 
   private void blockItemModel(Block block) {
     if (block == BlockInit.BLACK_DIAMOND_BLOCK.get())
-      builder(block, getExistingFile(mcLoc("item/generated")), "item/black_diamond_block");
+      builder(block, getExistingFile(mcLoc(GENERATED_ITEM)), "item/black_diamond_block");
     else if (block == BlockInit.BLACK_DIAMOND_ORE.get())
-      builder(block, getExistingFile(mcLoc("item/generated")), "item/black_diamond_ore");
+      builder(block, getExistingFile(mcLoc(GENERATED_ITEM)), "item/black_diamond_ore");
     else if (block.asItem() != Items.AIR) {
       String name = NameUtils.from(block).getPath();
       withExistingParent(name, modLoc("block/" + name));
