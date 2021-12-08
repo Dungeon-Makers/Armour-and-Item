@@ -12,12 +12,12 @@ plugins {
     id "com.diffplug.spotless" version "5.16.0"
     id "name.remal.sonarlint" version "1.5.0"
 }
+
 apply plugin: 'net.minecraftforge.gradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'eclipse'
 apply plugin: "java"
 apply plugin: "com.diffplug.spotless"
-apply plugin: "org.sonarqube"
 
 
 version = '1.16.5-3'
