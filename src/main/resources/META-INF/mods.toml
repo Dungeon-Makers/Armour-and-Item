@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[36,)"
+loaderVersion = "[38,)"
 license = "BSD 3-Clause License"
 issueTrackerURL = "https://github.com/Dungeon-Makers/Armour-and-Item/issues" #optional
 [[mods]]
@@ -13,18 +13,17 @@ authors = "Dungeon Makers" #optional
 description = '''
 A mod which add custom armour and items.
 '''
-# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.armouranditem]] #optional
 
+[[dependencies.armouranditem]] #optional
 modId = "forge"
 mandatory = true
-versionRange = "[38,)"
+versionRange = "[38.0.16,)"
 ordering = "NONE"
 side = "BOTH"
 [[dependencies.armouranditem]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.18,)"
+versionRange = "[1.18, 1.19)"
 ordering = "NONE"
 side = "BOTH"
 

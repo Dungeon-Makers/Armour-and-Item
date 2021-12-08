@@ -1,6 +1,7 @@
 package io.github.dungeonmakers.armouranditem.core.itemgroup;
 
 import io.github.dungeonmakers.armouranditem.core.BlockInit;
+import io.github.dungeonmakers.armouranditem.core.ItemInit;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
@@ -14,6 +15,6 @@ public class MainItemGroup extends CreativeModeTab {
 
   @Override
   public @NotNull ItemStack makeIcon() {
-    return new ItemStack(BlockInit.BLACK_DIAMOND.get());
+    return new ItemStack(ItemInit.BLACK_DIAMOND.get());
   }
 }
