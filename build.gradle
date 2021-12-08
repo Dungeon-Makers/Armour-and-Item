@@ -20,7 +20,7 @@ apply plugin: "java"
 apply plugin: "com.diffplug.spotless"
 
 
-version = '1.16.5-3'
+version = '1.18-1.0.0'
 group = 'com.yusuf.armouranditem' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'armouranditem'
 
