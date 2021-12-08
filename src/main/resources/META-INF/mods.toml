@@ -7,7 +7,7 @@ modId = "armouranditem"
 version = "${file.jarVersion}"
 displayName = "Custom Armour and Items"
 displayURL = "https://github.com/Dungeon-Makers"
-updateJSONURL = "https://raw.githubusercontent.com/Dungeon-Makers/Armour-and-Item/1.16.x/update.json"
+updateJSONURL = "https://raw.githubusercontent.com/Dungeon-Makers/Armour-and-Item/master/update.json"
 credits = "Custom Armour and Items by Yusuf Arfan Ismail."
 authors = "Dungeon Makers" #optional
 description = '''
@@ -18,19 +18,13 @@ A mod which add custom armour and items.
 
 modId = "forge"
 mandatory = true
-versionRange = "[36,)"
+versionRange = "[38,)"
 ordering = "NONE"
 side = "BOTH"
 [[dependencies.armouranditem]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.16.5,)"
-ordering = "NONE"
-side = "BOTH"
-[[dependencies.armouranditem]]
-modId = "realyusufismailcore"
-mandatory = true
-versionRange = "[1.16.5-4.3.3.2,)"
+versionRange = "[1.18,)"
 ordering = "NONE"
 side = "BOTH"
 
