@@ -1,6 +1,7 @@
 package io.github.dungeonmakers.armouranditem;
 
 import io.github.dungeonmakers.armouranditem.core.BlockInit;
+import io.github.dungeonmakers.armouranditem.core.ItemInit;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -14,5 +15,6 @@ public class ArmourAndItem {
     private ArmourAndItem() {
         final var bus = FMLJavaModLoadingContext.get().getModEventBus();
         BlockInit.BLOCKS.register(bus);
+        ItemInit.ITEMS.register(bus);
     }
 }
