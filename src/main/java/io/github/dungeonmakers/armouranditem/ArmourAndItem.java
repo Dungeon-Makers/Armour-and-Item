@@ -13,6 +13,7 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 @Mod(ArmourAndItem.MOD_ID)
+@Mod.EventBusSubscriber(modid = ArmourAndItem.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ArmourAndItem {
   public static final Logger LOGGER = LogManager.getLogger();
   public static final String MOD_ID = "armouranditem";

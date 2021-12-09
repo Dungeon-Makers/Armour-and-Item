@@ -10,16 +10,24 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ItemTextureProvider extends ItemModelProvider {
+import javax.annotation.Nonnull;
+
+public class ModItemModelProvider
+    extends net.minecraftforge.client.model.generators.ItemModelProvider {
   private static final String GENERATED_ITEM = "item/generated";
 
-  public ItemTextureProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+  public ModItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
     super(generator, ArmourAndItem.MOD_ID, existingFileHelper);
+  }
+
+  @Nonnull
+  @Override
+  public String getName() {
+    return "Armour And Items - Item Models";
   }
 
   @Override
