@@ -1,11 +1,10 @@
 package io.github.dungeonmakers.armouranditem.data;
 
 import io.github.dungeonmakers.armouranditem.ArmourAndItem;
+import io.github.dungeonmakers.armouranditem.data.lang.EnLang;
 import io.github.dungeonmakers.armouranditem.data.loot.LootTableConfiguration;
 import io.github.dungeonmakers.armouranditem.data.texture.ModBlockStateProvider;
 import io.github.dungeonmakers.armouranditem.data.texture.ModItemModelProvider;
-import net.minecraft.data.DataGenerator;
-import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
@@ -17,16 +16,11 @@ public final class DataGeneratorConfiguration {
 
   @SubscribeEvent
   public static void gatherData(@NotNull GatherDataEvent event) {
-    DataGenerator gen = event.getGenerator();
-    ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-    if (event.includeClient()) {
-      gen.addProvider(new ModBlockStateProvider(gen, existingFileHelper));
-      gen.addProvider(new ModItemModelProvider(gen, existingFileHelper));
-    } else if (event.includeServer()) {
-      gen.addProvider(new LootTableConfiguration(gen));
-    } else {
-      ArmourAndItem.LOGGER.error("Unhandled data gathering phase");
-      throw new IllegalStateException("Unhandled data gathering phase");
-    }
+    var gen = event.getGenerator();
+    var existingFileHelper = event.getExistingFileHelper();
+    gen.addProvider(new ModBlockStateProvider(gen, existingFileHelper));
+    gen.addProvider(new ModItemModelProvider(gen, existingFileHelper));
+    gen.addProvider(new EnLang(gen));
+    gen.addProvider(new LootTableConfiguration(gen));
   }
 }

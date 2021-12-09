@@ -1,6 +1,5 @@
 package io.github.dungeonmakers.armouranditem.core.itemgroup;
 
-import io.github.dungeonmakers.armouranditem.core.BlockInit;
 import io.github.dungeonmakers.armouranditem.core.ItemInit;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
