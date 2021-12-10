@@ -64,11 +64,6 @@ public class ModItemModelProvider
     return builder(item, parent, "item/" + name);
   }
 
-  private ItemModelBuilder blockBuilder(ItemLike item, ModelFile parent) {
-    String name = NameUtils.fromItem(item).getPath();
-    return builder(item, parent, "block/" + name);
-  }
-
   private ItemModelBuilder builder(ItemLike item, ModelFile parent, String texture) {
     return getBuilder(NameUtils.fromItem(item).getPath()).parent(parent).texture("layer0", texture);
   }

@@ -9,6 +9,7 @@ import javax.annotation.Nonnull;
 
 public class ModBlockStateProvider
     extends net.minecraftforge.client.model.generators.BlockStateProvider {
+
   public ModBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
     super(gen, ArmourAndItem.MOD_ID, exFileHelper);
   }
@@ -23,5 +24,6 @@ public class ModBlockStateProvider
   protected void registerStatesAndModels() {
     simpleBlock(BlockInit.BLACK_DIAMOND_ORE.get());
     simpleBlock(BlockInit.BLACK_DIAMOND_BLOCK.get());
+    simpleBlock(BlockInit.DEEPSLATE_BLACK_DIAMOND_ORE.get());
   }
 }

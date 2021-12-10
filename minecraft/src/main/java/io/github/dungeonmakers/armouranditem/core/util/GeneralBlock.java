@@ -35,24 +35,4 @@ public class GeneralBlock extends Block {
     return this.defaultBlockState().setValue(FACING,
         blockPlaceContext.getHorizontalDirection().getOpposite());
   }
-
-  public static <T extends Block> RegistryObject<T> registerSpecial(String name,
-      Supplier<T> supplier) {
-    RegistryObject<T> blockReg = BlockInit.BLOCKS.register(name, supplier);
-    ItemInit.ITEMS.register(name,
-        () -> new BlockItem(blockReg.get(), new Item.Properties().tab(MainItemGroup.MAIN)));
-    return blockReg;
-  }
-
-  public static RegistryObject<GeneralBlock> register(String name,
-      Supplier<GeneralBlock> supplier) {
-    RegistryObject<GeneralBlock> blockReg = BlockInit.BLOCKS.register(name, supplier);
-    ItemInit.ITEMS.register(name,
-        () -> new BlockItem(blockReg.get(), new Item.Properties().tab(MainItemGroup.MAIN)));
-    return blockReg;
-  }
-
-  public static RegistryObject<GeneralBlock> register(String name, Block existingBlock) {
-    return register(name, () -> new GeneralBlock(BlockBehaviour.Properties.copy(existingBlock)));
-  }
 }

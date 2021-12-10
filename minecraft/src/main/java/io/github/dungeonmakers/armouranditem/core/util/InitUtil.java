@@ -7,7 +7,8 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
-public class InitUtil {
+public enum InitUtil {
+  ;
   @Contract("_ -> new")
   public static <T extends IForgeRegistryEntry<T>> @NotNull DeferredRegister<T> create(
       IForgeRegistry<T> registry) {

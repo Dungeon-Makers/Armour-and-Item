@@ -10,10 +10,11 @@ buildscript {
 }
 plugins {
     id 'java'
-    id 'application'
     id 'com.github.johnrengelman.shadow' version '7.0.0'
-    id 'java-library'
 }
+
+apply plugin: 'java'
+apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'idea'
 
@@ -68,10 +69,6 @@ minecraft {
     }
 }
 sourceSets.main.resources { srcDir 'src/generated/resources' }
-
-application {
-    mainClass = ' io.github.armouranditem.ArmourAndItem'
-}
 
 repositories {
     mavenCentral()

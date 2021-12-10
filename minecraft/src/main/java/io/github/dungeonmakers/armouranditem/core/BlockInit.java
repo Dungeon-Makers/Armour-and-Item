@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import static io.github.dungeonmakers.armouranditem.core.util.GeneralBlock.register;
+import static io.github.dungeonmakers.armouranditem.core.util.RegisterBlocks.register;
 
 public enum BlockInit {
   ;
