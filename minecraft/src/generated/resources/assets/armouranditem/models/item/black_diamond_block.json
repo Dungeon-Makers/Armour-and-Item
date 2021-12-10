@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "armouranditem:block/black_diamond_block"
+  }
+}

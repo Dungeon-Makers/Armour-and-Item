@@ -75,6 +75,7 @@ public class NameUtils {
     return checkNotNull(item.asItem().getRegistryName());
   }
 
+
   /**
    * Gets the registry name of the stack's item, throwing an exception if it is null
    *

@@ -16,6 +16,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import javax.annotation.Nonnull;
 
+@SuppressWarnings("unused")
 public class ModItemModelProvider
     extends net.minecraftforge.client.model.generators.ItemModelProvider {
   private static final String GENERATED_ITEM = "item/generated";
@@ -43,9 +44,11 @@ public class ModItemModelProvider
 
   private void blockItemModel(Block block) {
     if (block == BlockInit.BLACK_DIAMOND_BLOCK.get())
-      builder(block, getExistingFile(mcLoc(GENERATED_ITEM)), "item/black_diamond_block");
+      builder(block, getExistingFile(mcLoc(GENERATED_ITEM)), "block/black_diamond_block");
     else if (block == BlockInit.BLACK_DIAMOND_ORE.get())
-      builder(block, getExistingFile(mcLoc(GENERATED_ITEM)), "item/black_diamond_ore");
+      builder(block, getExistingFile(mcLoc(GENERATED_ITEM)), "block/black_diamond_ore");
+    else if (block == BlockInit.DEEPSLATE_BLACK_DIAMOND_ORE.get())
+      builder(block, getExistingFile(mcLoc(GENERATED_ITEM)), "block/deepslate_black_diamond_ore");
     else if (block.asItem() != Items.AIR) {
       String name = NameUtils.from(block).getPath();
       withExistingParent(name, modLoc("block/" + name));
@@ -59,6 +62,11 @@ public class ModItemModelProvider
   private ItemModelBuilder builder(ItemLike item, ModelFile parent) {
     String name = NameUtils.fromItem(item).getPath();
     return builder(item, parent, "item/" + name);
+  }
+
+  private ItemModelBuilder blockBuilder(ItemLike item, ModelFile parent) {
+    String name = NameUtils.fromItem(item).getPath();
+    return builder(item, parent, "block/" + name);
   }
 
   private ItemModelBuilder builder(ItemLike item, ModelFile parent, String texture) {

@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 public final class DataGeneratorConfiguration {
   private DataGeneratorConfiguration() {}
 
+  // needed tp register the data gen
   @SubscribeEvent
   public static void gatherData(@NotNull GatherDataEvent event) {
     var gen = event.getGenerator();

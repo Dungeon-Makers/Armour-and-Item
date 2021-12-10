@@ -69,6 +69,10 @@ minecraft {
 }
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
+application {
+    mainClass = ' io.github.armouranditem.ArmourAndItem'
+}
+
 repositories {
     mavenCentral()
 }

@@ -1,7 +1,8 @@
 package io.github.dungeonmakers.armouranditem.core;
 
-import io.github.dungeonmakers.armouranditem.ArmourAndItem;
 import io.github.dungeonmakers.armouranditem.core.util.GeneralBlock;
+import io.github.dungeonmakers.armouranditem.core.util.InitUtil;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.registries.DeferredRegister;
@@ -11,8 +12,7 @@ import static io.github.dungeonmakers.armouranditem.core.util.GeneralBlock.regis
 
 public enum BlockInit {
   ;
-  public static final DeferredRegister<Block> BLOCKS =
-      DeferredRegister.create(ForgeRegistries.BLOCKS, ArmourAndItem.MOD_ID);
+  public static final DeferredRegister<Block> BLOCKS = InitUtil.create(ForgeRegistries.BLOCKS);
 
   public static final RegistryObject<GeneralBlock> BLACK_DIAMOND_ORE =
       register("black_diamond_ore", Blocks.DIAMOND_ORE);
