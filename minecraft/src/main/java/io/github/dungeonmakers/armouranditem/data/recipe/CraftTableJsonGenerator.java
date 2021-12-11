@@ -19,6 +19,7 @@ import net.minecraft.tags.Tag;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.ItemLike;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
@@ -98,12 +99,8 @@ public class CraftTableJsonGenerator implements RecipeBuilder {
     return this;
   }
 
-  /**
-   * public CraftTableJsonGenerator addEnchantment(String p_126133_, Enchantment enchantment) {
-   * this.advancement.addCriterion(p_126133_, enchantment); }
-   */
 
-  public @NotNull CraftTableJsonGenerator group(@javax.annotation.Nullable String string) {
+  public @NotNull CraftTableJsonGenerator group(@Nullable String string) {
     this.group = string;
     return this;
   }
@@ -158,9 +155,10 @@ public class CraftTableJsonGenerator implements RecipeBuilder {
     }
   }
 
-  public record Result(ResourceLocation id, Item resultItem, int count, String group,
-      List<String> pattern, Map<Character, Ingredient> key, Advancement.Builder advancement,
-      ResourceLocation advancementId) implements FinishedRecipe {
+  public record Result(ResourceLocation id, Item resultItem, int count,
+      String group, List<String> pattern, Map<Character, Ingredient> key,
+      Advancement.Builder advancement, ResourceLocation advancementId,
+      Enchantment enchantment) implements FinishedRecipe {
 
     public void serializeRecipeData(@NotNull JsonObject jsonObject) {
       if (!this.group.isEmpty()) {
@@ -187,7 +185,13 @@ public class CraftTableJsonGenerator implements RecipeBuilder {
         jsonobject1.addProperty("count", this.count);
       }
 
+      JsonObject nbtObject = new JsonObject();
+      jsonobject1.addProperty("nbt", "nbt");
+      nbtObject.addProperty("enchantments",
+              Registry.ENCHANTMENT.getKey(this.enchantment).toString());
+
       jsonObject.add("result", jsonobject1);
+      jsonobject1.add("Enchantments", nbtObject);
     }
 
     public @NotNull RecipeSerializer<?> getType() {
