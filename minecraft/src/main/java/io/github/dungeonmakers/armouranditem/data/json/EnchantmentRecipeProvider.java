@@ -33,7 +33,7 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
   private final List<String> rows = Lists.newArrayList();
   private final Map<Character, Ingredient> key = Maps.newLinkedHashMap();
 
-  private Enchantment enchantments;
+  private final ArrayList<Enchantment> enchantments = Lists.newArrayList();
 
   private final Advancement.Builder advancement = Advancement.Builder.advancement();
 
@@ -92,7 +92,8 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
 
   @NotNull
   public EnchantmentRecipeProvider setEnchantment(Enchantment enchantment) {
-    return this.setEnchantment(enchantment);
+    this.enchantments.add(enchantment);
+    return this;
   }
 
   @NotNull
@@ -164,7 +165,7 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
 
   public record Result(ResourceLocation id, Item result, int count, String group,
       List<String> pattern, Map<Character, Ingredient> key, Advancement.Builder advancement,
-      Enchantment enchantments, int enchantmentLevel, int hideFlags,
+      ArrayList<Enchantment> enchantments, int enchantmentLevel, int hideFlags,
       ResourceLocation advancementId) implements FinishedRecipe {
 
     @Override
@@ -198,6 +199,7 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
       jsonobject1.addProperty("nbt", "nbt");
       JsonObject enchantment = new JsonObject();
       enchantment.addProperty("enchantment", Objects.requireNonNull(Registry.ENCHANTMENT.getKey(this.enchantments.get(0))).toString());
+
       jsonobject1.addProperty("hide_flags", hideFlags);
       jsonobject1.add("enchantments", enchantment);
       JsonObject enchantmentStuff = new JsonObject();
