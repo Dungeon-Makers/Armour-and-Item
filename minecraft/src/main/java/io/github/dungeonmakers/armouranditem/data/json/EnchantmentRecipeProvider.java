@@ -3,10 +3,7 @@ package io.github.dungeonmakers.armouranditem.data.json;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonPrimitive;
+import com.google.gson.*;
 import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.core.Registry;
@@ -95,8 +92,7 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
 
   @NotNull
   public EnchantmentRecipeProvider setEnchantment(Enchantment enchantment) {
-    this.enchantments = enchantment;
-    return this;
+    return this.setEnchantment(enchantment);
   }
 
   @NotNull
@@ -174,17 +170,40 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
     @Override
     public void serializeRecipeData(@NotNull JsonObject jsonObject) {
 
-      @NotNull
-      CreateEnchantmentJson setEnchantmentJson = SetEnchantmentJson.createEnchantmentJson(pattern,
-          key, result, Registry.ITEM.getKey(this.result).toString(), hideFlags, enchantmentLevel,
-          enchantments);
+      if (!this.group.isEmpty()) {
+        jsonObject.addProperty("group", this.group);
+      }
 
-      Gson g = new Gson();
+      JsonArray jsonarray = new JsonArray();
 
-      String json = g.toJson(setEnchantmentJson);
-      JsonObject jsonObject1 = new JsonObject();
-      jsonObject1.addProperty("result", json);
-      jsonObject.add("result", jsonObject1);
+      for(String s : this.pattern) {
+        jsonarray.add(s);
+      }
+
+      jsonObject.add("pattern", jsonarray);
+      JsonObject jsonobject = new JsonObject();
+
+      for(Map.Entry<Character, Ingredient> entry : this.key.entrySet()) {
+        jsonobject.add(String.valueOf(entry.getKey()), entry.getValue().toJson());
+      }
+
+      jsonObject.add("key", jsonobject);
+      JsonObject jsonobject1 = new JsonObject();
+      jsonobject1.addProperty("item", Registry.ITEM.getKey(this.result).toString());
+      if (this.count > 1) {
+        jsonobject1.addProperty("count", this.count);
+      }
+
+      //enchantment
+      jsonobject1.addProperty("nbt", "nbt");
+      JsonObject enchantment = new JsonObject();
+      enchantment.addProperty("enchantment", Objects.requireNonNull(Registry.ENCHANTMENT.getKey(this.enchantments.get(0))).toString());
+      jsonobject1.addProperty("hide_flags", hideFlags);
+      jsonobject1.add("enchantments", enchantment);
+      JsonObject enchantmentStuff = new JsonObject();
+      enchantmentStuff.addProperty("lvl", enchantmentLevel);
+      enchantment.add("id", enchantmentStuff);
+      jsonObject.add("result", jsonobject1);
     }
 
     public @NotNull RecipeSerializer<?> getType() {
