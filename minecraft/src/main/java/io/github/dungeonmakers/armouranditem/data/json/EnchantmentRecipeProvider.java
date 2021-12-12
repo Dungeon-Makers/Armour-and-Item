@@ -1,19 +1,17 @@
-package io.github.dungeonmakers.armouranditem.data.recipe;
+package io.github.dungeonmakers.armouranditem.data.json;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-import com.google.gson.JsonArray;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.AdvancementRewards;
-import net.minecraft.advancements.CriterionTriggerInstance;
-import net.minecraft.advancements.RequirementsStrategy;
+import com.google.gson.JsonPrimitive;
+import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.core.Registry;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeBuilder;
-import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.Tag;
 import net.minecraft.world.item.Item;
@@ -21,52 +19,53 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.ItemLike;
-import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Consumer;
 
 /**
- * @see RecipeProvider
+ * @see net.minecraft.data.recipes.ShapedRecipeBuilder
  */
-public class CraftTableJsonGenerator implements RecipeBuilder {
+public class EnchantmentRecipeProvider implements RecipeBuilder {
   private final Item result;
   private final int count;
+  private int hideFlags;
+  private int level;
   private final List<String> rows = Lists.newArrayList();
   private final Map<Character, Ingredient> key = Maps.newLinkedHashMap();
+
+  private Enchantment enchantments;
+
   private final Advancement.Builder advancement = Advancement.Builder.advancement();
+
   @Nullable
   private String group;
 
-  public CraftTableJsonGenerator(@NotNull ItemLike itemLike, int count) {
+  public EnchantmentRecipeProvider(@NotNull ItemLike itemLike, int count) {
     this.result = itemLike.asItem();
     this.count = count;
   }
 
-  @Contract("_ -> new")
-  public static @NotNull CraftTableJsonGenerator shaped(ItemLike itemLike) {
+  public static @NotNull EnchantmentRecipeProvider shaped(ItemLike itemLike) {
     return shaped(itemLike, 1);
   }
 
-  @Contract("_, _ -> new")
-  public static @NotNull CraftTableJsonGenerator shaped(ItemLike itemLike, int count) {
-    return new CraftTableJsonGenerator(itemLike, count);
+  public static @NotNull EnchantmentRecipeProvider shaped(ItemLike itemLike, int count) {
+    return new EnchantmentRecipeProvider(itemLike, count);
   }
 
-  public CraftTableJsonGenerator define(Character character, Tag<Item> item) {
+
+  public EnchantmentRecipeProvider define(Character character, Tag<Item> item) {
     return this.define(character, Ingredient.of(item));
   }
 
-  public CraftTableJsonGenerator define(Character character, ItemLike itemLike) {
+  public EnchantmentRecipeProvider define(Character character, ItemLike itemLike) {
     return this.define(character, Ingredient.of(itemLike));
   }
 
-  public CraftTableJsonGenerator define(Character character, Ingredient ingredient) {
+  public EnchantmentRecipeProvider define(Character character, Ingredient ingredient) {
     if (this.key.containsKey(character)) {
       throw new IllegalArgumentException("Symbol '" + character + "' is already defined!");
     } else if (character == ' ') {
@@ -78,7 +77,7 @@ public class CraftTableJsonGenerator implements RecipeBuilder {
     }
   }
 
-  public CraftTableJsonGenerator pattern(String pattern) {
+  public EnchantmentRecipeProvider pattern(String pattern) {
     if (!this.rows.isEmpty() && pattern.length() != this.rows.get(0).length()) {
       throw new IllegalArgumentException("Pattern must be the same width on every line!");
     } else {
@@ -88,19 +87,30 @@ public class CraftTableJsonGenerator implements RecipeBuilder {
   }
 
   @NotNull
-  public CraftTableJsonGenerator unlockedBy(@NotNull String string,
-      @NotNull CriterionTriggerInstance criterionTriggerInstance) {
-    return this.addCriterion(string, criterionTriggerInstance);
-  }
-
-  public @NotNull CraftTableJsonGenerator addCriterion(@NotNull String string,
+  public EnchantmentRecipeProvider unlockedBy(@NotNull String string,
       @NotNull CriterionTriggerInstance criterionTriggerInstance) {
     this.advancement.addCriterion(string, criterionTriggerInstance);
     return this;
   }
 
+  @NotNull
+  public EnchantmentRecipeProvider setEnchantment(Enchantment enchantment) {
+    this.enchantments = enchantment;
+    return this;
+  }
 
-  public @NotNull CraftTableJsonGenerator group(@Nullable String string) {
+  @NotNull
+  public EnchantmentRecipeProvider setLevel(int level) {
+    this.level = level;
+    return this;
+  }
+
+  public EnchantmentRecipeProvider setHideFlags(int hideFlags) {
+    this.hideFlags = hideFlags;
+    return this;
+  }
+
+  public @NotNull EnchantmentRecipeProvider group(@Nullable String string) {
     this.group = string;
     return this;
   }
@@ -116,8 +126,9 @@ public class CraftTableJsonGenerator implements RecipeBuilder {
         .addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(resourceLocation))
         .rewards(AdvancementRewards.Builder.recipe(resourceLocation))
         .requirements(RequirementsStrategy.OR);
-    finishedRecipeConsumer.accept(new CraftTableJsonGenerator.Result(resourceLocation, this.result,
-        this.count, this.group == null ? "" : this.group, this.rows, this.key, this.advancement,
+    finishedRecipeConsumer.accept(new EnchantmentRecipeProvider.Result(resourceLocation,
+        this.result, this.count, this.group == null ? "" : this.group, this.rows, this.key,
+        this.advancement, this.enchantments, this.level, this.hideFlags,
         new ResourceLocation(resourceLocation.getNamespace(),
             "recipes/" + Objects.requireNonNull(this.result.getItemCategory()).getRecipeFolderName()
                 + "/" + resourceLocation.getPath())));
@@ -155,43 +166,25 @@ public class CraftTableJsonGenerator implements RecipeBuilder {
     }
   }
 
-  public record Result(ResourceLocation id, Item resultItem, int count,
-      String group, List<String> pattern, Map<Character, Ingredient> key,
-      Advancement.Builder advancement, ResourceLocation advancementId,
-      Enchantment enchantment) implements FinishedRecipe {
+  public record Result(ResourceLocation id, Item result, int count, String group,
+      List<String> pattern, Map<Character, Ingredient> key, Advancement.Builder advancement,
+      Enchantment enchantments, int enchantmentLevel, int hideFlags,
+      ResourceLocation advancementId) implements FinishedRecipe {
 
+    @Override
     public void serializeRecipeData(@NotNull JsonObject jsonObject) {
-      if (!this.group.isEmpty()) {
-        jsonObject.addProperty("group", this.group);
-      }
 
-      JsonArray jsonarray = new JsonArray();
+      @NotNull
+      CreateEnchantmentJson setEnchantmentJson = SetEnchantmentJson.createEnchantmentJson(pattern,
+          key, result, Registry.ITEM.getKey(this.result).toString(), hideFlags, enchantmentLevel,
+          enchantments);
 
-      for (String s : this.pattern) {
-        jsonarray.add(s);
-      }
+      Gson g = new Gson();
 
-      jsonObject.add("pattern", jsonarray);
-      JsonObject jsonobject = new JsonObject();
-
-      for (Map.Entry<Character, Ingredient> entry : this.key.entrySet()) {
-        jsonobject.add(String.valueOf(entry.getKey()), entry.getValue().toJson());
-      }
-
-      jsonObject.add("key", jsonobject);
-      JsonObject jsonobject1 = new JsonObject();
-      jsonobject1.addProperty("item", Registry.ITEM.getKey(this.resultItem).toString());
-      if (this.count > 1) {
-        jsonobject1.addProperty("count", this.count);
-      }
-
-      JsonObject nbtObject = new JsonObject();
-      jsonobject1.addProperty("nbt", "nbt");
-      nbtObject.addProperty("enchantments",
-              Registry.ENCHANTMENT.getKey(this.enchantment).toString());
-
-      jsonObject.add("result", jsonobject1);
-      jsonobject1.add("Enchantments", nbtObject);
+      String json = g.toJson(setEnchantmentJson);
+      JsonObject jsonObject1 = new JsonObject();
+      jsonObject1.addProperty("result", json);
+      jsonObject.add("result", jsonObject1);
     }
 
     public @NotNull RecipeSerializer<?> getType() {

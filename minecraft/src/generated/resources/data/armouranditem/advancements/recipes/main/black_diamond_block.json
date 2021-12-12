@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "armouranditem:black_diamond_block"
+    ]
+  },
+  "criteria": {
+    "has_black_diamond": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "armouranditem:black_diamond"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "armouranditem:black_diamond_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_black_diamond",
+      "has_the_recipe"
+    ]
+  ]
+}
