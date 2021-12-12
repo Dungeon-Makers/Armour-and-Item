@@ -177,14 +177,14 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
 
       JsonArray jsonarray = new JsonArray();
 
-      for(String s : this.pattern) {
+      for (String s : this.pattern) {
         jsonarray.add(s);
       }
 
       jsonObject.add("pattern", jsonarray);
       JsonObject jsonobject = new JsonObject();
 
-      for(Map.Entry<Character, Ingredient> entry : this.key.entrySet()) {
+      for (Map.Entry<Character, Ingredient> entry : this.key.entrySet()) {
         jsonobject.add(String.valueOf(entry.getKey()), entry.getValue().toJson());
       }
 
@@ -195,10 +195,11 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
         jsonobject1.addProperty("count", this.count);
       }
 
-      //enchantment
+      // enchantment
       jsonobject1.addProperty("nbt", "nbt");
       JsonObject enchantment = new JsonObject();
-      enchantment.addProperty("enchantment", Objects.requireNonNull(Registry.ENCHANTMENT.getKey(this.enchantments.get(0))).toString());
+      enchantment.addProperty("enchantment",
+          Objects.requireNonNull(Registry.ENCHANTMENT.getKey(this.enchantments.get(0))).toString());
 
       jsonobject1.addProperty("hide_flags", hideFlags);
       jsonobject1.add("enchantments", enchantment);
