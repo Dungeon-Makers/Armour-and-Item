@@ -13,7 +13,10 @@ public enum ItemInit {
   ;
   public static final DeferredRegister<Item> ITEMS = InitUtil.create(ForgeRegistries.ITEMS);
 
+  // ingots
   public static final RegistryObject<Item> BLACK_DIAMOND = register("black_diamond");
+  public static final RegistryObject<Item> PURPLE_DIAMOND = register("purple_diamond");
+  // tools
   public static final RegistryObject<SwordItem> BLACK_DIAMOND_SWORD = ITEMS
       .register("black_diamond_sword", () -> new SwordItem(CustomToolMaterial.BLACK_DIAMOND_SWORD,
           0, 7f, new Item.Properties().stacksTo(1).durability(1562).tab(MainItemGroup.MAIN)));

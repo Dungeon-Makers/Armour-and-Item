@@ -25,5 +25,7 @@ public class ModBlockStateProvider
     simpleBlock(BlockInit.BLACK_DIAMOND_ORE.get());
     simpleBlock(BlockInit.BLACK_DIAMOND_BLOCK.get());
     simpleBlock(BlockInit.DEEPSLATE_BLACK_DIAMOND_ORE.get());
+    simpleBlock(BlockInit.PURPLE_DIAMOND_ORE.get());
+    simpleBlock(BlockInit.PURPLE_DIAMOND_BLOCK.get());
   }
 }

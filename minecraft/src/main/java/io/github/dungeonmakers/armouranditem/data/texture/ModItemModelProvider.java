@@ -37,10 +37,13 @@ public class ModItemModelProvider
     BlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(this::blockItemModel);
 
     ModelFile itemGenerated = getExistingFile(new ResourceLocation(GENERATED_ITEM));
-    ModelFile itemHandHeld = getExistingFile(mcLoc("item/handheld"));
+    ModelFile itemHandHeld = getExistingFile(new ResourceLocation("item/handheld"));
 
     // items
     builder(ItemInit.BLACK_DIAMOND.get(), itemGenerated);
+    builder(ItemInit.PURPLE_DIAMOND.get(), itemGenerated);
+
+    // tools
     builder(ItemInit.BLACK_DIAMOND_SWORD.get(), itemHandHeld);
   }
 
@@ -51,6 +54,10 @@ public class ModItemModelProvider
       builder(block, getExistingFile(mcLoc(GENERATED_ITEM)), "block/black_diamond_ore");
     else if (block == BlockInit.DEEPSLATE_BLACK_DIAMOND_ORE.get())
       builder(block, getExistingFile(mcLoc(GENERATED_ITEM)), "block/deepslate_black_diamond_ore");
+    else if (block == BlockInit.PURPLE_DIAMOND_ORE.get())
+      builder(block, getExistingFile(mcLoc(GENERATED_ITEM)), "block/purple_diamond_ore");
+    else if (block == BlockInit.PURPLE_DIAMOND_BLOCK.get())
+      builder(block, getExistingFile(mcLoc(GENERATED_ITEM)), "block/purple_diamond_block");
     else if (block.asItem() != Items.AIR) {
       String name = NameUtils.from(block).getPath();
       withExistingParent(name, modLoc("block/" + name));

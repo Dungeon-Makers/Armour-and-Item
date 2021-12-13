@@ -4,6 +4,8 @@ import io.github.dungeonmakers.armouranditem.ArmourAndItem;
 import io.github.dungeonmakers.armouranditem.data.lang.EnLang;
 import io.github.dungeonmakers.armouranditem.data.loot.LootTableConfiguration;
 import io.github.dungeonmakers.armouranditem.data.recipe.CraftingTableRecipeGenerator;
+import io.github.dungeonmakers.armouranditem.data.tags.ModBlockTagsProvider;
+import io.github.dungeonmakers.armouranditem.data.tags.ModItemTagsProvider;
 import io.github.dungeonmakers.armouranditem.data.texture.ModBlockStateProvider;
 import io.github.dungeonmakers.armouranditem.data.texture.ModItemModelProvider;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -22,6 +24,9 @@ public final class DataGeneratorConfiguration {
     var existingFileHelper = event.getExistingFileHelper();
     gen.addProvider(new ModBlockStateProvider(gen, existingFileHelper));
     gen.addProvider(new ModItemModelProvider(gen, existingFileHelper));
+    var blockTags = new ModBlockTagsProvider(gen, existingFileHelper);
+    gen.addProvider(blockTags);
+    gen.addProvider(new ModItemTagsProvider(gen, blockTags, existingFileHelper));
     gen.addProvider(new CraftingTableRecipeGenerator(gen));
     gen.addProvider(new EnLang(gen));
     gen.addProvider(new LootTableConfiguration(gen));

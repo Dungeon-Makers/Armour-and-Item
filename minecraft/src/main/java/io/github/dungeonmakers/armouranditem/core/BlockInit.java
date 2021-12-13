@@ -22,4 +22,10 @@ public enum BlockInit {
 
   public static final RegistryObject<GeneralBlock> BLACK_DIAMOND_BLOCK =
       register("black_diamond_block", Blocks.DIAMOND_BLOCK);
+
+  public static final RegistryObject<GeneralBlock> PURPLE_DIAMOND_ORE =
+      register("purple_diamond_ore", Blocks.DIAMOND_ORE);
+
+  public static final RegistryObject<GeneralBlock> PURPLE_DIAMOND_BLOCK =
+      register("purple_diamond", Blocks.DIAMOND_BLOCK);
 }

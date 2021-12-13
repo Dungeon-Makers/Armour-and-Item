@@ -6,7 +6,6 @@ import com.google.common.collect.Sets;
 import com.google.gson.*;
 import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
-import net.minecraft.core.Registry;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
@@ -16,6 +15,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -181,7 +181,8 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
 
       jsonObject.add("key", jsonobject);
       JsonObject jsonObject1 = new JsonObject();
-      jsonObject1.addProperty("item", Registry.ITEM.getKey(this.result).toString());
+      jsonObject1.addProperty("item",
+          Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(this.result)).toString());
       if (this.count > 1) {
         jsonObject1.addProperty("count", this.count);
       }
@@ -191,7 +192,7 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
       JsonObject jsonObject2 = new JsonObject();
       JsonObject jsonObject3 = new JsonObject();
       jsonObject3.addProperty("id",
-          Objects.requireNonNull(Registry.ENCHANTMENT.getKey(this.enchantment)).toString());
+          Objects.requireNonNull(ForgeRegistries.ENCHANTMENTS.getKey(this.enchantment)).toString());
       jsonObject3.addProperty("lvl", enchantmentLevel);
       jsonArray1.add(jsonObject3);
       jsonObject2.add("Enchantments", jsonArray1);
