@@ -75,6 +75,6 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18-39.0.0'
+    minecraft 'net.minecraftforge:forge:1.18-38.0.17'
     implementation group: 'io.github.yusufsdiscordbot', name: 'annotations', version: '1.0.3'
 }
