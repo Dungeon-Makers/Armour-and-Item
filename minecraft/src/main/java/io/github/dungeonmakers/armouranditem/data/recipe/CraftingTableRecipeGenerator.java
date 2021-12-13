@@ -7,7 +7,9 @@ import io.github.dungeonmakers.armouranditem.data.json.EnchantmentRecipeProvider
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import org.jetbrains.annotations.Contract;
@@ -28,9 +30,15 @@ public class CraftingTableRecipeGenerator extends RecipeProvider {
   @Override
   protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
     // blocks
-    EnchantmentRecipeProvider.shaped(BlockInit.BLACK_DIAMOND_BLOCK.get())
+    ShapedRecipeBuilder.shaped(BlockInit.BLACK_DIAMOND_BLOCK.get())
         .define('#', ItemInit.BLACK_DIAMOND.get()).pattern("###").pattern("###").pattern("###")
-        .setEnchantment(Enchantments.SHARPNESS, 1, 1)
         .unlockedBy("has_black_diamond", has(ItemInit.BLACK_DIAMOND.get())).save(consumer);
+
+    EnchantmentRecipeProvider.shaped(ItemInit.BLACK_DIAMOND_SWORD.get())
+            .define('#', ItemInit.BLACK_DIAMOND.get())
+            .define('£', Items.STICK)
+            .pattern("#").pattern("#").pattern("£")
+            .setEnchantment(Enchantments.SHARPNESS, 1, 1)
+            .unlockedBy("has_black_diamond", has(ItemInit.BLACK_DIAMOND.get())).save(consumer);
   }
 }

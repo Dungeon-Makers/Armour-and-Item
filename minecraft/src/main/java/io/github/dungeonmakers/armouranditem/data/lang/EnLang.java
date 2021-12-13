@@ -24,6 +24,8 @@ public class EnLang extends LanguageProvider {
 
     // ingots
     item(ItemInit.BLACK_DIAMOND, "Black Diamond Ingot");
+    item(ItemInit.BLACK_DIAMOND_SWORD, "Black Diamond Sword");
+
   }
 
   protected <T extends Item> void item(@NotNull RegistryObject<T> entry, String name) {

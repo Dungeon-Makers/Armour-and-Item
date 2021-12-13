@@ -98,17 +98,6 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
     return this;
   }
 
-  @NotNull
-  public EnchantmentRecipeProvider setLevel(int level) {
-    this.level = level;
-    return this;
-  }
-
-  public EnchantmentRecipeProvider setHideFlags(int hideFlags) {
-    this.hideFlags = hideFlags;
-    return this;
-  }
-
   public @NotNull EnchantmentRecipeProvider group(@Nullable String string) {
     this.group = string;
     return this;

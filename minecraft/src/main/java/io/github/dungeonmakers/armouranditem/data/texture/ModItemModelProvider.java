@@ -37,9 +37,11 @@ public class ModItemModelProvider
     BlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(this::blockItemModel);
 
     ModelFile itemGenerated = getExistingFile(new ResourceLocation(GENERATED_ITEM));
+    ModelFile itemHandHeld = getExistingFile(mcLoc("item/handheld"));
 
     // items
     builder(ItemInit.BLACK_DIAMOND.get(), itemGenerated);
+    builder(ItemInit.BLACK_DIAMOND_SWORD.get(), itemHandHeld);
   }
 
   private void blockItemModel(Block block) {
