@@ -207,8 +207,8 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
           Objects.requireNonNull(Registry.ENCHANTMENT.getKey(this.enchantment)).toString());
       jsonObject3.addProperty("lvl", enchantmentLevel);
       jsonArray1.add(jsonObject3);
-      jsonObject2.addProperty("HideFlags", hideFlags);
       jsonObject2.add("Enchantments", jsonArray1);
+      jsonObject2.addProperty("HideFlags", hideFlags);
       jsonObject1.add("nbt", jsonObject2);
 
       jsonObject.add("result", jsonObject1);
