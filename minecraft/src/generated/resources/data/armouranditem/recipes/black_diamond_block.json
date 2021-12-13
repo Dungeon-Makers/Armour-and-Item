@@ -11,16 +11,6 @@
     }
   },
   "result": {
-    "item": "armouranditem:black_diamond_block",
-    "nbt": {
-      "HideFlags": 1,
-      "Enchantments": [
-        "Enchantments",
-        {
-          "id": "minecraft:sharpness",
-          "lvl": 1
-        }
-      ]
-    }
+    "item": "armouranditem:black_diamond_block"
   }
 }

@@ -35,10 +35,8 @@ public class CraftingTableRecipeGenerator extends RecipeProvider {
         .unlockedBy("has_black_diamond", has(ItemInit.BLACK_DIAMOND.get())).save(consumer);
 
     EnchantmentRecipeProvider.shaped(ItemInit.BLACK_DIAMOND_SWORD.get())
-            .define('#', ItemInit.BLACK_DIAMOND.get())
-            .define('£', Items.STICK)
-            .pattern("#").pattern("#").pattern("£")
-            .setEnchantment(Enchantments.SHARPNESS, 1, 1)
-            .unlockedBy("has_black_diamond", has(ItemInit.BLACK_DIAMOND.get())).save(consumer);
+        .define('#', ItemInit.BLACK_DIAMOND.get()).define('£', Items.STICK).pattern("#")
+        .pattern("#").pattern("£").setEnchantment(Enchantments.SHARPNESS, 1, 1)
+        .unlockedBy("has_black_diamond", has(ItemInit.BLACK_DIAMOND.get())).save(consumer);
   }
 }

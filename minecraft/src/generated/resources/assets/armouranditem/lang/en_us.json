@@ -2,5 +2,6 @@
   "block.armouranditem.black_diamond_block": "Black Diamond Block",
   "block.armouranditem.black_diamond_ore": "Black Diamond Ore",
   "block.armouranditem.deepslate_black_diamond_ore": "DEEPSLATE Black Diamond Ore",
-  "item.armouranditem.black_diamond": "Black Diamond Ingot"
+  "item.armouranditem.black_diamond": "Black Diamond Ingot",
+  "item.armouranditem.black_diamond_sword": "Black Diamond Sword"
 }

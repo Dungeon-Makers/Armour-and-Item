@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "£"
+  ],
+  "key": {
+    "#": {
+      "item": "armouranditem:black_diamond"
+    },
+    "£": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "armouranditem:black_diamond_sword",
+    "nbt": {
+      "Enchantments": [
+        "Enchantments",
+        {
+          "id": "minecraft:sharpness",
+          "lvl": 1
+        }
+      ],
+      "HideFlags": 1
+    }
+  }
+}
