@@ -30,10 +30,9 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
   private final int count;
   private int hideFlags;
   private int level;
+  private Enchantment enchantment;
   private final List<String> rows = Lists.newArrayList();
   private final Map<Character, Ingredient> key = Maps.newLinkedHashMap();
-
-  private final ArrayList<Enchantment> enchantments = Lists.newArrayList();
 
   private final Advancement.Builder advancement = Advancement.Builder.advancement();
 
@@ -91,8 +90,11 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
   }
 
   @NotNull
-  public EnchantmentRecipeProvider setEnchantment(Enchantment enchantment) {
-    this.enchantments.add(enchantment);
+  public EnchantmentRecipeProvider setEnchantment(Enchantment enchantment, int level,
+      int hideFlags) {
+    this.enchantment = enchantment;
+    this.level = level;
+    this.hideFlags = hideFlags;
     return this;
   }
 
@@ -125,7 +127,7 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
         .requirements(RequirementsStrategy.OR);
     finishedRecipeConsumer.accept(new EnchantmentRecipeProvider.Result(resourceLocation,
         this.result, this.count, this.group == null ? "" : this.group, this.rows, this.key,
-        this.advancement, this.enchantments, this.level, this.hideFlags,
+        this.advancement, this.enchantment, this.level, this.hideFlags,
         new ResourceLocation(resourceLocation.getNamespace(),
             "recipes/" + Objects.requireNonNull(this.result.getItemCategory()).getRecipeFolderName()
                 + "/" + resourceLocation.getPath())));
@@ -165,7 +167,7 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
 
   public record Result(ResourceLocation id, Item result, int count, String group,
       List<String> pattern, Map<Character, Ingredient> key, Advancement.Builder advancement,
-      ArrayList<Enchantment> enchantments, int enchantmentLevel, int hideFlags,
+      Enchantment enchantment, int enchantmentLevel, int hideFlags,
       ResourceLocation advancementId) implements FinishedRecipe {
 
     @Override
@@ -175,13 +177,13 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
         jsonObject.addProperty("group", this.group);
       }
 
-      JsonArray jsonarray = new JsonArray();
+      JsonArray jsonArray = new JsonArray();
 
       for (String s : this.pattern) {
-        jsonarray.add(s);
+        jsonArray.add(s);
       }
 
-      jsonObject.add("pattern", jsonarray);
+      jsonObject.add("pattern", jsonArray);
       JsonObject jsonobject = new JsonObject();
 
       for (Map.Entry<Character, Ingredient> entry : this.key.entrySet()) {
@@ -189,24 +191,27 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
       }
 
       jsonObject.add("key", jsonobject);
-      JsonObject jsonobject1 = new JsonObject();
-      jsonobject1.addProperty("item", Registry.ITEM.getKey(this.result).toString());
+      JsonObject jsonObject1 = new JsonObject();
+      jsonObject1.addProperty("item", Registry.ITEM.getKey(this.result).toString());
       if (this.count > 1) {
-        jsonobject1.addProperty("count", this.count);
+        jsonObject1.addProperty("count", this.count);
       }
 
       // enchantment
-      jsonobject1.addProperty("nbt", "nbt");
-      JsonObject enchantment = new JsonObject();
-      enchantment.addProperty("enchantment",
-          Objects.requireNonNull(Registry.ENCHANTMENT.getKey(this.enchantments.get(0))).toString());
+      JsonArray jsonArray1 = new JsonArray();
 
-      jsonobject1.addProperty("hide_flags", hideFlags);
-      jsonobject1.add("enchantments", enchantment);
-      JsonObject enchantmentStuff = new JsonObject();
-      enchantmentStuff.addProperty("lvl", enchantmentLevel);
-      enchantment.add("id", enchantmentStuff);
-      jsonObject.add("result", jsonobject1);
+      jsonArray1.add("Enchantments");
+      JsonObject jsonObject2 = new JsonObject();
+      JsonObject jsonObject3 = new JsonObject();
+      jsonObject3.addProperty("id",
+          Objects.requireNonNull(Registry.ENCHANTMENT.getKey(this.enchantment)).toString());
+      jsonObject3.addProperty("lvl", enchantmentLevel);
+      jsonArray1.add(jsonObject3);
+      jsonObject2.addProperty("HideFlags", hideFlags);
+      jsonObject2.add("Enchantments", jsonArray1);
+      jsonObject1.add("nbt", jsonObject2);
+
+      jsonObject.add("result", jsonObject1);
     }
 
     public @NotNull RecipeSerializer<?> getType() {
