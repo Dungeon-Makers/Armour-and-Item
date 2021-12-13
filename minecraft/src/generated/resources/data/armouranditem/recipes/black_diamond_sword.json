@@ -17,7 +17,6 @@
     "item": "armouranditem:black_diamond_sword",
     "nbt": {
       "Enchantments": [
-        "Enchantments",
         {
           "id": "minecraft:sharpness",
           "lvl": 1

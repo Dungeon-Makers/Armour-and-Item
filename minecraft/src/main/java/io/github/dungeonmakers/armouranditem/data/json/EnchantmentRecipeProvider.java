@@ -188,8 +188,6 @@ public class EnchantmentRecipeProvider implements RecipeBuilder {
 
       // enchantment
       JsonArray jsonArray1 = new JsonArray();
-
-      jsonArray1.add("Enchantments");
       JsonObject jsonObject2 = new JsonObject();
       JsonObject jsonObject3 = new JsonObject();
       jsonObject3.addProperty("id",
