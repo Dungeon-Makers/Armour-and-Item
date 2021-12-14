@@ -27,5 +27,5 @@ public enum BlockInit {
       register("purple_diamond_ore", Blocks.DIAMOND_ORE);
 
   public static final RegistryObject<GeneralBlock> PURPLE_DIAMOND_BLOCK =
-      register("purple_diamond", Blocks.DIAMOND_BLOCK);
+      register("purple_diamond_block", Blocks.DIAMOND_BLOCK);
 }

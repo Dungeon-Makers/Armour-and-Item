@@ -20,10 +20,13 @@ public class EnLang extends LanguageProvider {
   protected void addTranslations() {
     block(BlockInit.BLACK_DIAMOND_BLOCK, "Black Diamond Block");
     block(BlockInit.BLACK_DIAMOND_ORE, "Black Diamond Ore");
+    block(BlockInit.PURPLE_DIAMOND_ORE, "Purple Diamond Ore");
+    block(BlockInit.PURPLE_DIAMOND_BLOCK, "Purple Diamond Block");
     block(BlockInit.DEEPSLATE_BLACK_DIAMOND_ORE, "DEEPSLATE Black Diamond Ore");
 
     // ingots
-    item(ItemInit.BLACK_DIAMOND, "Black Diamond Ingot");
+    item(ItemInit.BLACK_DIAMOND, "Black Diamond");
+    item(ItemInit.PURPLE_DIAMOND, "Purple Diamond");
     item(ItemInit.BLACK_DIAMOND_SWORD, "Black Diamond Sword");
 
   }

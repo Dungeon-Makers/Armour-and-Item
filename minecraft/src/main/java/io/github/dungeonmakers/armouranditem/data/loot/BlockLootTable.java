@@ -20,7 +20,11 @@ public class BlockLootTable extends BlockLoot {
     add(BlockInit.DEEPSLATE_BLACK_DIAMOND_ORE.get(),
         createOreDrop(BlockInit.BLACK_DIAMOND_ORE.get(), ItemInit.BLACK_DIAMOND.get()));
 
+    add(BlockInit.PURPLE_DIAMOND_ORE.get(),
+        createOreDrop(BlockInit.PURPLE_DIAMOND_ORE.get(), ItemInit.PURPLE_DIAMOND.get()));
+
     dropSelf(BlockInit.BLACK_DIAMOND_BLOCK.get());
+    dropSelf(BlockInit.PURPLE_DIAMOND_BLOCK.get());
   }
 
   @Override

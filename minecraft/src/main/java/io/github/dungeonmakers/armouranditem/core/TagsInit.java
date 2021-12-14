@@ -42,7 +42,7 @@ public enum TagsInit {
         forge("storage_blocks/purple_diamond");
 
     // ingots
-    public static final Tag.Named<Item> INGOTS_BLACK_DIAMOND = forge("forge:ingots/black_diamond");
+    public static final Tag.Named<Item> INGOTS_BLACK_DIAMOND = forge("ingots/black_diamond");
     public static final Tag.Named<Item> INGOTS_PURPLE_DIAMOND = forge("ingots/purple_diamond");
 
     private static Tag.@NotNull Named<Item> forge(String path) {
