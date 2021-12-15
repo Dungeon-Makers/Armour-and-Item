@@ -23,15 +23,7 @@ public class ArmourAndItem {
     final var bus = FMLJavaModLoadingContext.get().getModEventBus();
     BlockInit.BLOCKS.register(bus);
     ItemInit.ITEMS.register(bus);
-    bus.addListener(this::setup);
     MinecraftForge.EVENT_BUS.register(this);
     LOGGER.info("Armour and Item loaded");
-  }
-
-  private void setup(final @NotNull FMLCommonSetupEvent event) {
-    event.enqueueWork(() -> {
-      OreGen.registerConfigured();
-      OreGen.registerPlaced();
-    });
   }
 }

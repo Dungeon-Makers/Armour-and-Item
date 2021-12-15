@@ -1,75 +1,70 @@
 package io.github.dungeonmakers.armouranditem.core;
 
 import io.github.dungeonmakers.armouranditem.ArmourAndItem;
-import net.minecraft.core.Registry;
-import net.minecraft.data.BuiltinRegistries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
+import net.minecraft.data.worldgen.features.FeatureUtils;
+import net.minecraft.data.worldgen.features.OreFeatures;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.placement.*;
-import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
+import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
+import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Supplier;
 
 public class OreGen {
-  public static final List<PlacedFeature> OVERWORLD_ORES = new ArrayList<>();
+  private OreGen() {}
 
-  public static final ConfiguredFeature<?, ?> TEST_CF =
-      Feature.ORE.configured(new OreConfiguration(new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), // Blocks
-                                                                                                    // which
-                                                                                                    // the
-                                                                                                    // ore
-                                                                                                    // can
-                                                                                                    // replace
-          BlockInit.DEEPSLATE_BLACK_DIAMOND_ORE.get().defaultBlockState(), // The ore
-          10, // Size of vein
-          0.0f // Unsure atm
-      ));
+  protected static final List<PlacedFeature> OVERWORLD_ORES = new ArrayList<>();
+  protected static final List<PlacedFeature> END_ORES = new ArrayList<>();
+  protected static final List<PlacedFeature> NETHER_ORES = new ArrayList<>();
 
+  public static final RuleTest END_TEST = new BlockMatchTest(Blocks.END_STONE);
 
-  public static final PlacedFeature TEST_PF = TEST_CF.placed(CountPlacement.of(10), // Attempts per
-                                                                                    // chunk
-      InSquarePlacement.spread(), // Causes the randomness in the ore veins
-      HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(50), // Min height for ore to spawn
-                                                                   // (worldMinHeight + height)
-          VerticalAnchor.belowTop(50)), // Max height for it to spawn (worldMaxHeight - height)
-      BiomeFilter.biome() // Allows for ore to spawn correctly
-  );
+  public static void registerOres() {
 
+    final ConfiguredFeature<?, ?> blackDiamondOre =
+        FeatureUtils
+            .register("black_diamond_ore",
+                Feature.ORE
+                    .configured(new OreConfiguration(
+                        List.of(
+                            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES,
+                                BlockInit.BLACK_DIAMOND_BLOCK.get().defaultBlockState()),
+                            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES,
+                                BlockInit.DEEPSLATE_BLACK_DIAMOND_ORE.get().defaultBlockState())),
+                        8)));
+
+    final PlacedFeature placedBlackDiamondOre = PlacementUtils.register("black_diamond_ore",
+        blackDiamondOre.placed(
+            HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(20)),
+            InSquarePlacement.spread(), CountPlacement.of(100)));
+    OVERWORLD_ORES.add(placedBlackDiamondOre);
+  }
 
   @Mod.EventBusSubscriber(modid = ArmourAndItem.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
-  public static class ForgeEvents {
+  public static class ForgeBusSubscriber {
+    private ForgeBusSubscriber() {}
 
     @SubscribeEvent
-    public static void biomeLoading(@NotNull BiomeLoadingEvent event) {
-      final var features =
+    public static void biomeLoading(BiomeLoadingEvent event) {
+      final List<Supplier<PlacedFeature>> features =
           event.getGeneration().getFeatures(GenerationStep.Decoration.UNDERGROUND_ORES);
 
-      OreGen.OVERWORLD_ORES.forEach(ore -> features.add(() -> ore));
+      switch (event.getCategory()) {
+        case NETHER -> OreGen.NETHER_ORES.forEach(ore -> features.add(() -> ore));
+        case THEEND -> OreGen.END_ORES.forEach(ore -> features.add(() -> ore));
+        default -> OreGen.OVERWORLD_ORES.forEach(ore -> features.add(() -> ore));
+      }
     }
-  }
-
-  // These methods are to be called in the main class
-  public static void registerPlaced() {
-    Registry<PlacedFeature> registry = BuiltinRegistries.PLACED_FEATURE;
-
-    OVERWORLD_ORES.add(Registry.register(registry,
-        new ResourceLocation(ArmourAndItem.MOD_ID, "deepslate_black_diamond_ore"), OreGen.TEST_PF));
-  }
-
-  public static void registerConfigured() {
-    Registry<ConfiguredFeature<?, ?>> registry = BuiltinRegistries.CONFIGURED_FEATURE;
-
-    Registry.register(registry,
-        new ResourceLocation(ArmourAndItem.MOD_ID, "deepslate_black_diamond_ore"), OreGen.TEST_CF);
   }
 }
