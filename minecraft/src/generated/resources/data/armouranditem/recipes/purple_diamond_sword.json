@@ -7,14 +7,14 @@
   ],
   "key": {
     "#": {
-      "item": "armouranditem:black_diamond"
+      "item": "armouranditem:purple_diamond"
     },
     "£": {
       "item": "minecraft:stick"
     }
   },
   "result": {
-    "item": "armouranditem:black_diamond_sword",
+    "item": "armouranditem:purple_diamond_sword",
     "nbt": {
       "Enchantments": [
         {

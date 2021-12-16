@@ -42,9 +42,18 @@ public class ModItemModelProvider
     // items
     builder(ItemInit.BLACK_DIAMOND.get(), itemGenerated);
     builder(ItemInit.PURPLE_DIAMOND.get(), itemGenerated);
+    builder(ItemInit.BLACK_DIAMOND_HELMET.get(), itemGenerated);
+    builder(ItemInit.BLACK_DIAMOND_CHESTPLATE.get(), itemGenerated);
+    builder(ItemInit.BLACK_DIAMOND_LEGGINGS.get(), itemGenerated);
+    builder(ItemInit.BLACK_DIAMOND_BOOTS.get(), itemGenerated);
+    builder(ItemInit.PURPLE_DIAMOND_HELMET.get(), itemGenerated);
+    builder(ItemInit.PURPLE_DIAMOND_CHESTPLATE.get(), itemGenerated);
+    builder(ItemInit.PURPLE_DIAMOND_LEGGINGS.get(), itemGenerated);
+    builder(ItemInit.PURPLE_DIAMOND_BOOTS.get(), itemGenerated);
 
     // tools
     builder(ItemInit.BLACK_DIAMOND_SWORD.get(), itemHandHeld);
+    builder(ItemInit.PURPLE_DIAMOND_SWORD.get(), itemHandHeld);
   }
 
   private void blockItemModel(Block block) {

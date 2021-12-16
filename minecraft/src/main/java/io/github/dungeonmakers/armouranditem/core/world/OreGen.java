@@ -1,6 +1,7 @@
-package io.github.dungeonmakers.armouranditem.core;
+package io.github.dungeonmakers.armouranditem.core.world;
 
 import io.github.dungeonmakers.armouranditem.ArmourAndItem;
+import io.github.dungeonmakers.armouranditem.core.BlockInit;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;

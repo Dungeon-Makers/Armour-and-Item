@@ -5,6 +5,15 @@
   "block.armouranditem.purple_diamond_block": "Purple Diamond Block",
   "block.armouranditem.purple_diamond_ore": "Purple Diamond Ore",
   "item.armouranditem.black_diamond": "Black Diamond",
+  "item.armouranditem.black_diamond_boots": "Black Diamond Boots",
+  "item.armouranditem.black_diamond_chestplate": "Black Diamond Chestplate",
+  "item.armouranditem.black_diamond_helmet": "Black Diamond Helmet",
+  "item.armouranditem.black_diamond_leggings": "Black Diamond Leggings",
   "item.armouranditem.black_diamond_sword": "Black Diamond Sword",
-  "item.armouranditem.purple_diamond": "Purple Diamond"
+  "item.armouranditem.purple_diamond": "Purple Diamond",
+  "item.armouranditem.purple_diamond_boots": "Purple Diamond Boots",
+  "item.armouranditem.purple_diamond_chestplate": "Purple Diamond Chestplate",
+  "item.armouranditem.purple_diamond_helmet": "Purple Diamond Helmet",
+  "item.armouranditem.purple_diamond_leggings": "Purple Diamond Leggings",
+  "item.armouranditem.purple_diamond_sword": "Purple Diamond Sword"
 }

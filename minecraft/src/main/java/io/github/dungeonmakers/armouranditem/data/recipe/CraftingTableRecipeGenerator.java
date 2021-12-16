@@ -34,9 +34,54 @@ public class CraftingTableRecipeGenerator extends RecipeProvider {
         .define('#', ItemInit.BLACK_DIAMOND.get()).pattern("###").pattern("###").pattern("###")
         .unlockedBy("has_black_diamond", has(ItemInit.BLACK_DIAMOND.get())).save(consumer);
 
+    ShapedRecipeBuilder.shaped(BlockInit.PURPLE_DIAMOND_BLOCK.get())
+        .define('#', ItemInit.PURPLE_DIAMOND.get()).pattern("###").pattern("###").pattern("###")
+        .unlockedBy("has_purple_diamond", has(ItemInit.PURPLE_DIAMOND.get())).save(consumer);
+
+
+    // tools
     EnchantmentRecipeProvider.shaped(ItemInit.BLACK_DIAMOND_SWORD.get())
         .define('#', ItemInit.BLACK_DIAMOND.get()).define('£', Items.STICK).pattern("#")
-        .pattern("#").pattern("£").setEnchantment(Enchantments.SHARPNESS, 1, 1)
+        .pattern("#").pattern("£").setEnchantment(Enchantments.MENDING, 1, 1)
         .unlockedBy("has_black_diamond", has(ItemInit.BLACK_DIAMOND.get())).save(consumer);
+
+    EnchantmentRecipeProvider.shaped(ItemInit.PURPLE_DIAMOND_SWORD.get())
+        .define('#', ItemInit.PURPLE_DIAMOND.get()).define('£', Items.STICK).pattern("#")
+        .pattern("#").pattern("£").setEnchantment(Enchantments.MENDING, 1, 1)
+        .unlockedBy("has_purple_diamond", has(ItemInit.PURPLE_DIAMOND.get())).save(consumer);
+
+
+    // amour
+    ShapedRecipeBuilder.shaped(ItemInit.BLACK_DIAMOND_HELMET.get())
+        .define('#', ItemInit.BLACK_DIAMOND.get()).pattern("###").pattern("# #")
+        .unlockedBy("has_black_diamond", has(ItemInit.BLACK_DIAMOND.get())).save(consumer);
+
+    ShapedRecipeBuilder.shaped(ItemInit.PURPLE_DIAMOND_HELMET.get())
+        .define('#', ItemInit.PURPLE_DIAMOND.get()).pattern("###").pattern("# #")
+        .unlockedBy("has_purple_diamond", has(ItemInit.PURPLE_DIAMOND.get())).save(consumer);
+
+    ShapedRecipeBuilder.shaped(ItemInit.BLACK_DIAMOND_CHESTPLATE.get())
+        .define('#', ItemInit.BLACK_DIAMOND.get()).pattern("# #").pattern("###").pattern("###")
+        .unlockedBy("has_black_diamond", has(ItemInit.BLACK_DIAMOND.get())).save(consumer);
+
+    ShapedRecipeBuilder.shaped(ItemInit.PURPLE_DIAMOND_CHESTPLATE.get())
+        .define('#', ItemInit.PURPLE_DIAMOND.get()).pattern("# #").pattern("###").pattern("###")
+        .unlockedBy("has_purple_diamond", has(ItemInit.PURPLE_DIAMOND.get())).save(consumer);
+
+    ShapedRecipeBuilder.shaped(ItemInit.BLACK_DIAMOND_LEGGINGS.get())
+        .define('#', ItemInit.BLACK_DIAMOND.get()).pattern("###").pattern("# #").pattern("# #")
+        .unlockedBy("has_black_diamond", has(ItemInit.BLACK_DIAMOND.get())).save(consumer);
+
+    ShapedRecipeBuilder.shaped(ItemInit.PURPLE_DIAMOND_LEGGINGS.get())
+        .define('#', ItemInit.PURPLE_DIAMOND.get()).pattern("###").pattern("# #").pattern("# #")
+        .unlockedBy("has_purple_diamond", has(ItemInit.PURPLE_DIAMOND.get())).save(consumer);
+
+    ShapedRecipeBuilder.shaped(ItemInit.BLACK_DIAMOND_BOOTS.get())
+        .define('#', ItemInit.BLACK_DIAMOND.get()).pattern("# #").pattern("# #")
+        .unlockedBy("has_black_diamond", has(ItemInit.BLACK_DIAMOND.get())).save(consumer);
+
+    ShapedRecipeBuilder.shaped(ItemInit.PURPLE_DIAMOND_BOOTS.get())
+        .define('#', ItemInit.PURPLE_DIAMOND.get()).pattern("# #").pattern("# #")
+        .unlockedBy("has_purple_diamond", has(ItemInit.PURPLE_DIAMOND.get())).save(consumer);
   }
 }

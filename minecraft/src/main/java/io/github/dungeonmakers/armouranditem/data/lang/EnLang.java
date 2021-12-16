@@ -27,8 +27,20 @@ public class EnLang extends LanguageProvider {
     // ingots
     item(ItemInit.BLACK_DIAMOND, "Black Diamond");
     item(ItemInit.PURPLE_DIAMOND, "Purple Diamond");
-    item(ItemInit.BLACK_DIAMOND_SWORD, "Black Diamond Sword");
 
+    // tools
+    item(ItemInit.BLACK_DIAMOND_SWORD, "Black Diamond Sword");
+    item(ItemInit.PURPLE_DIAMOND_SWORD, "Purple Diamond Sword");
+
+    // armour
+    item(ItemInit.BLACK_DIAMOND_HELMET, "Black Diamond Helmet");
+    item(ItemInit.BLACK_DIAMOND_CHESTPLATE, "Black Diamond Chestplate");
+    item(ItemInit.BLACK_DIAMOND_LEGGINGS, "Black Diamond Leggings");
+    item(ItemInit.BLACK_DIAMOND_BOOTS, "Black Diamond Boots");
+    item(ItemInit.PURPLE_DIAMOND_HELMET, "Purple Diamond Helmet");
+    item(ItemInit.PURPLE_DIAMOND_CHESTPLATE, "Purple Diamond Chestplate");
+    item(ItemInit.PURPLE_DIAMOND_LEGGINGS, "Purple Diamond Leggings");
+    item(ItemInit.PURPLE_DIAMOND_BOOTS, "Purple Diamond Boots");
   }
 
   protected <T extends Item> void item(@NotNull RegistryObject<T> entry, String name) {
