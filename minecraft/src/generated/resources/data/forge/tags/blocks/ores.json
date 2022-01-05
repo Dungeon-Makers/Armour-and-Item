@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:ores/black_diamonds",
+    "#forge:ores/purple_diamonds",
+    "#forge:storage_blocks/black_diamond",
+    "#forge:storage_blocks/purple_diamond"
+  ]
+}

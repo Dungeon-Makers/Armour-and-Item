@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "armouranditem:purple_diamond_sword"
+    ]
+  },
+  "criteria": {
+    "has_purple_diamond": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "armouranditem:purple_diamond"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "armouranditem:purple_diamond_sword"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_purple_diamond",
+      "has_the_recipe"
+    ]
+  ]
+}
